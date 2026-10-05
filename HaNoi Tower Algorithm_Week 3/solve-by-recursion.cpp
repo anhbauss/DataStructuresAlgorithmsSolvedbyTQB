@@ -36,8 +36,8 @@ int main(){
     for (int i=0;i<n;i++){
         A[i]=n-i;
     }
-    int num_A=n-1, num_B=-1, num_C=1;
+    int num_A=n-1, num_B=-1, num_C=-1;
     move(n,A,num_A,B,num_B,C,num_C);
-    
+
     return 0;
 }
