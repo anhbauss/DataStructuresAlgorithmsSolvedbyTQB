@@ -2,7 +2,8 @@
 #include<iostream>
 
 using namespace std;
-void move(int A[],int B[],int C[],int n,int &i){  
+void move(int n,,int A[],int &num_A,int B[],int &num_B,int C[],int &num_C,int &i){  
+if(i>=n) return;
 int i_temp = i;
 move(A,C,B,n,i++);
 B[i_temp]=A[n-1-i_temp];
