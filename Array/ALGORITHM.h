@@ -2,7 +2,6 @@
 #define ALGORITHM_H
 #include<stdio.h>
 #include<iostream>
-
 template <typename It, typename T>
 
 It find(It first,  It last, const T& target){
