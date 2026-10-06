@@ -23,12 +23,12 @@ for(int i=0;i<n;i++){
         }
         else continue;
     }
+    for(int j=0;j<n;j++){
+    cout<<Mang[j]<<" ";
+    if(j==n-1) cout<<endl;
+    }
 }
-cout<<"Mang sau khi sap xep:"<<endl;
-for (int i = 0; i < n; i++)
-{
-    cout<<Mang[i]<<" ";
-}
+
 
 return 0;
 }
