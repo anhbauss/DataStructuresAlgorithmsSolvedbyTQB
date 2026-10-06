@@ -18,10 +18,10 @@ for(int i=0;i<n;i++){
        }
     }
     int temp = Mang[i];
-    Mang[i] = temp;
+    Mang[i] = Mang[min_address];
     Mang[min_address] = temp;
     for(int j=0;j<n;j++){
-        cout<<Mang[j];
+        cout<<Mang[j]<<" ";
         if(j==n-1) cout<<endl;
     }
 }
