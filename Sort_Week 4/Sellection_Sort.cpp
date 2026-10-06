@@ -7,6 +7,9 @@ int n;
 cout<<"Vui long nhap gia tri cua n:"<<endl;
 cin >> n;
 int Mang[n];
+for (int i=0;i<n;i++){
+    cin>>Mang[i];
+}
 for(int i=0;i<n;i++){
     int min_address = i;
     for(int j=i;j<n;j++){
@@ -17,5 +20,10 @@ for(int i=0;i<n;i++){
     int temp = Mang[i];
     Mang[i] = temp;
     Mang[min_address] = temp;
+    for(int j=0;j<n;j++){
+        cout<<Mang[j];
+        if(j==n-1) cout<<endl;
+    }
 }
+return 0;
 }
