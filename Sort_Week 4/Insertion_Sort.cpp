@@ -12,12 +12,16 @@ for (int i=0;i<n;i++){
 }
 for(int i=0;i<n;i++){
     for(int j=0;j<i;j++){
-        if(Mang[j]<=Mang[i]){
-            Mang[j]=Mang[i];   
+        if(Mang[j]>=Mang[i]){
+            int temp=Mang[j];
+            Mang[j]=Mang[i];
+            for(int k=j;k<i;k++){
+                int temp2 = Mang[k+1];
+                Mang[k+1]=temp;
+                temp = temp2;
+            }   
         }
         else continue;
-        int temp = Mang[j+1];
-        Mang[j+1]=Mang[j];
     }
 }
 cout<<"Mang sau khi sap xep:"<<endl;
