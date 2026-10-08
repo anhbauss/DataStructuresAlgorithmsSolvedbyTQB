@@ -31,7 +31,7 @@ cout_data sum_prefix(int num[],int n){
             printed = true;
             if(count==0) cout<<"The subarrays with a sum of 0 are:"<<endl;
             cout<<"{";
-            for (int i=0;i<my_distance(sum_prefix_v.begin(),it)+1;i++){
+            for (int i=0;i<my_distance_b(sum_prefix_v.begin(),it)+1;i++){
             if(i==0) cout<<num[i];
             else cout<<","<<num[i];
             }
@@ -49,10 +49,10 @@ unordered_map<int,int> sum_equal_zero(cout_data data){
     int i = 0; 
     for(int integer : sum_vector){
         pair<int,int> key_value;
-        auto pos = find(sum_vector.begin()+i+1,sum_vector.end(),integer);
+        auto pos = tim(sum_vector.begin()+i+1,sum_vector.end(),integer);
         if(pos!=sum_vector.end()){
             key_value.first = i;
-            key_value.second = my_distance(sum_vector.begin(),pos);
+            key_value.second = my_distance_b(sum_vector.begin(),pos);
             has_equal_value.insert(key_value);
         }
         i++;

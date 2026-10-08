@@ -2,9 +2,11 @@
 #define ALGORITHM_H
 #include<stdio.h>
 #include<iostream>
+#include<vector>
+
 template <typename It, typename T>
 
-It find(It first,  It last, const T& target){
+It tim(It first,  It last, const T& target){
   while (first != last){
     if (*first == target){
         return first;
@@ -14,7 +16,7 @@ It find(It first,  It last, const T& target){
 return last;
 }
 template <typename It>
-int my_distance(It first, It last){
+int my_distance_b(It first, It last){
     int count=0;
     while (first!=last){
         first++;
@@ -23,9 +25,10 @@ int my_distance(It first, It last){
     return count;
 }
 
-int soluong(const vector<int>& mang ){
-   int* start = mang.begin();
-   int
 
+int soluong(const vector<int>& mang ){
+   auto bd = mang.begin();
+   auto kt = mang.end();
+   return bd -kt;
 }
 #endif
