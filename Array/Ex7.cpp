@@ -39,8 +39,8 @@ int main(){
         }
     }
     for(int i=0;i<n;i++){
-        for(int j=i+1;i<n;j++){
-            if(A[j]-A[i]==target){
+        for(int j=i;i<n;j++){
+            if(C[j+1]-C[i]==target){
                 pair<int,int> p;
                 p.first = i;
                 p.second = j;
