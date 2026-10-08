@@ -30,16 +30,25 @@ int main(){
 }
 
 result find_largest_array(int A[],int n){
+    result B;
     vector<int> rs;
     for(int i=0;i<n;i++){
        vector<int> temp;
        for(int j=i;j<n;j++){
-       if(tim(temp.begin()+1,temp.end(),A[j])!= temp.end())
+       if(tim(temp.begin(),temp.end(),A[j])!= temp.end())
        temp.push_back(A[j]);
        else break;
        }
        if (soluong(temp) > soluong(rs)) rs=temp;
        else continue; 
     }
-
+    B.num = soluong(rs);
+    for(int i=0;i<n;i++){
+        vector<int>::iterator p = rs.begin();
+        while(p!=rs.end()){
+        B.ARR[i] = *p;
+        p++;    
+    }
+    }
+    return B;
 }
