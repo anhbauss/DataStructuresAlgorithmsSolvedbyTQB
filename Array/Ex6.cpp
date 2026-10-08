@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<iostream>
+#include<vector>
 
 using namespace std;
 struct result{
@@ -28,13 +29,11 @@ int main(){
 }
 
 result find_largest_array(int A[],int n){
-    int* p1 = new int[n];
-    int* init = p1;
-    int count =0;
+    vector<int> temp;
     for(int i=0;i<n;i++){
-    int* p2 =init;
-    while(p2<p1){
-        if(*p2==A[i]) 
-    }
+       for(int j=i;j<n;j++){
+       if(temp.find(temp.begin()+1,temp.end(),A[j])!=NULL)
+       temp.push_back(A[j]);
+       }
     }
 }
