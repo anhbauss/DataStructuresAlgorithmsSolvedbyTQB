@@ -3,6 +3,7 @@
 #include<stdio.h>
 #include<iostream>
 #include<vector>
+using namespace std;
 
 template <typename It, typename T>
 
@@ -25,10 +26,9 @@ int my_distance_b(It first, It last){
     return count;
 }
 
-
 int soluong(const vector<int>& mang ){
    auto bd = mang.begin();
    auto kt = mang.end();
-   return bd -kt;
+   return bd - kt;
 }
 #endif
