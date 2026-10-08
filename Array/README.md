@@ -24,3 +24,11 @@
  + Kiểm tra dãy đã liên tiếp hay chưa bằng cách kiểm tra khoảng giá trị của max và min
  + Nếu dãy đã liền, số lượng phần tử trong temp lớn hơn trong rs thì gán temp cho rs.
  + Tiếp tục duyệt với giá trị i tiếp theo cho đến khi kết thúc giải thuật
+
+# Ex7:
+ ## Chi tiết giải thuật tìm các dãy có tổng bằng số target
+ + Tìm mảng sum prefix là tổng của các dãy con to dần từ 1 đến n
+ + Một subarray có tổng bằng 8 khi độ lệch của hai phần tử phân kỳ trong mảng sum prefix bằng 8
+ + Chỉ số của phần tử đầu tiên của subarray là vị trí phần tử thứ nhất của mảng sum prefix và phần tử cuối cùng là vị trí phần tử thứ hai của mảng sum prefix + 1
+ + Duyệt và đưa ra các mảng con
+ + Tìm mảng lớn nhất bằng cách độ lệch của chỉ số phần tử đầu tiên và cuối cùng của mảng subarray là lớn nhất
