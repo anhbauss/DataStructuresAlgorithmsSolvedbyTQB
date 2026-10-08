@@ -18,3 +18,12 @@ int main(){
     return 0;
 }
 
+int find_duplicate_elements(int A[],int n){
+    for(int i=0;i<n;i++){
+        for(int j= n-1;j>i;j--){
+            if(A[j]==A[i]) return A[j];
+            else continue;
+        }
+    }
+    return -1;
+}
