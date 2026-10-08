@@ -34,21 +34,23 @@ result find_largest_array(int A[],int n){
     vector<int> rs;
     for(int i=0;i<n;i++){
        vector<int> temp;
+       int min = A[i];
+       int max = A[i];
        for(int j=i;j<n;j++){
-       if(tim(temp.begin(),temp.end(),A[j])!= temp.end())
+       if(tim(temp.begin(),temp.end(),A[j])!= temp.end()) break;
        temp.push_back(A[j]);
-       else break;
+       if(A[j]< min) min = A[j];
+       if(A[j]>max) max = A[j];
+       if (max-min==soluong(temp)-1){
+        if(soluong(temp)>soluong(rs)) rs=temp;
        }
-       if (soluong(temp) > soluong(rs)) rs=temp;
-       else continue; 
+       }
     }
     B.num = soluong(rs);
     for(int i=0;i<n;i++){
-        vector<int>::iterator p = rs.begin();
-        while(p!=rs.end()){
-        B.ARR[i] = *p;
-        p++;    
-    }
+        for (auto j : rs){
+            B.ARR[i] = j;
+        }
     }
     return B;
 }
