@@ -22,4 +22,10 @@ int my_distance(It first, It last){
     }
     return count;
 }
+
+int soluong(const vector<int>& mang ){
+   int* start = mang.begin();
+   int
+
+}
 #endif
