@@ -27,10 +27,10 @@ void sort(int A[],int n){
     int* p1;
     int* p2;
     p1=&A[0];
-    p2=p1+n;
-    while(p1!=p2){
+    p2=p1+n-1;
+    while(p1<p2){
     if(*p1==1){
-        while(p2!=p1){
+        while(p2>p1){
         if(*p2==0){
             int temp= *p2;
             *p2=*p1;
@@ -41,6 +41,7 @@ void sort(int A[],int n){
     }
     p1++;
     }
+    return;
 }
 
 
