@@ -3,7 +3,7 @@
 
 using namespace std;
 struct result{
-    int n;
+    int num;
     int ARR[];
 };
 
@@ -20,9 +20,21 @@ int main(){
     result rs;
     rs = find_largest_array(A,n);
     cout<<"The largest subarray is {"<<endl;
-    for(int i=0;i<rs.n;i++){
+    for(int i=0;i<rs.num;i++){
     cout<<" "<<rs.ARR[i]<<",";
-    if(i==rs.n-1) cout<<"}"<<endl;
+    if(i==rs.num-1) cout<<"}"<<endl;
     }
     return 0;
+}
+
+result find_largest_array(int A[],int n){
+    int* p1 = new int[n];
+    int* init = p1;
+    int count =0;
+    for(int i=0;i<n;i++){
+    int* p2 =init;
+    while(p2<p1){
+        if(*p2==A[i]) 
+    }
+    }
 }
