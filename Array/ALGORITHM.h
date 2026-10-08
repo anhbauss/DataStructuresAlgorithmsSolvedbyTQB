@@ -29,6 +29,6 @@ int my_distance_b(It first, It last){
 int soluong(const vector<int>& mang ){
    auto bd = mang.begin();
    auto kt = mang.end();
-   return bd - kt;
+   return kt-bd;
 }
 #endif

@@ -6,7 +6,7 @@
 using namespace std;
 struct result{
     int num;
-    int ARR[];
+    vector<int> ARR;
 };
 
 result find_largest_array(int A[],int n);
@@ -21,11 +21,11 @@ int main(){
     }
     result rs;
     rs = find_largest_array(A,n);
-    cout<<"The largest subarray is {"<<endl;
-    for(int i=0;i<rs.num;i++){
-    cout<<" "<<rs.ARR[i]<<",";
-    if(i==rs.num-1) cout<<"}"<<endl;
+    cout<<"The largest subarray is {";
+    for(auto c : rs.ARR ){
+    cout<<" "<<c<<",";
     }
+    cout<<"}"<<endl;
     return 0;
 }
 
@@ -47,10 +47,6 @@ result find_largest_array(int A[],int n){
        }
     }
     B.num = soluong(rs);
-    for(int i=0;i<n;i++){
-        for (auto j : rs){
-            B.ARR[i] = j;
-        }
-    }
+    B.ARR = rs;
     return B;
 }
