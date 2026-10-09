@@ -32,13 +32,13 @@ int soluong(const vector<int>& mang ){
    return kt-bd;
 }
 
-template <typename It,typename T1, typename T2>
-void day(T1<T2>& A,T2 B){
-vt = T1.begin();
-while(vt!=NULL){
+template <typename T1, typename T2>
+void day(T1& A,T2 B){
+auto vt = A.begin();
+while(vt!=A.end()){
   vt++;
 }
-*vt = B;
+A.insert(vt,B);
 return;
 }
 
