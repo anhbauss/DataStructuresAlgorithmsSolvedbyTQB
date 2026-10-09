@@ -4,13 +4,21 @@
 #include<deque>
 using namespace std;
 
+int count_1_in_dq(const deque<int>& dq){
+    int count =0;
+    for(auto i : dq){
+        if(i==1) count++;
+    }
+    return count;
+}
+
 vector<pair<int,int>> find_array_has_sum_0(int A[],int n){
     vector<pair<int,int>> result;
     deque<int> B,temp;
     for(int i=0;i<n;i++){
         B.push_back(A[i]);
     }
-    temp=B
+    temp=B;
     for(int i=0;i<n;i++){
         int count=0;
         for(int j=0;j<i;j++){
@@ -34,6 +42,7 @@ vector<pair<int,int>> find_array_has_sum_0(int A[],int n){
     }
     
     }
+    return result;
 }
 
 int main(){
