@@ -15,11 +15,18 @@ int main(){
     }
     sort(A,n);
     sort(B,m);
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            if()
+    int* p1,p2;
+    while(p1!=NULL){
+        while(p2!=NULL){
+            if(*p2<*p1){
+                swap(p1,p2);
+                sap_xep(p2);
+            }
+            p2++;
         }
+        p1++;
     }
 
-// A[n]={1,3,4,6,7,8} B[n]={4,5,7,8,9,10}
+// A[n]={1,3,4,6,7,8} 
+//    B[n]={4,5,7,8,9,10}
 }
