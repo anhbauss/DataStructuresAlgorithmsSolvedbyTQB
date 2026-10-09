@@ -44,3 +44,15 @@
  + Lần lượt đẩy các phần tử trong mảng input vào, nếu phần tử đó là 0 thì tăng count_0 lên 1 đơn vị, ngược lại nếu là 1 thì tăng count_1 lên 1 đơn vị.
  + Kiểm tra xem nếu count_0 == count_1 thì tức là subarray đang có tổng bằng 0
  + Lúc này, nếu thêm điều kiện kích thước subarray lớn hơn hoặc bằng max_size: gán max_size= temp.size(); lớn hơn thì xóa và đẩy vào data_structure ban đầu; bằng nhau thì đẩy vào.
+
+# EX10:
+## Chi tiết giải thuật đảo hai mảng sao cho khi ghép liền kề hai mảng thì được một dãy tăng dần
+ + Input: Mảng A có N phần tử, mảng B có M phần tử
+ + Dùng giải thuật Bubble Sort để sort mảng A và mảng B theo thứ tự tăng dần
+ + Tạo con trỏ p1 và p2 ứng với hai vị trí đầu của mảng A và mảng B
+ + Duyệt cho con trỏ p1 chạy đến vị trí cuối cùng trong mảng A
+ + So sánh giá trị của con trỏ p2 với p1, nếu giá trị tại p2 nhỏ hơn giá trị tại p1 thì đổi giá trị của hai con trỏ
+ + Dùng hàm sap_xep để sắp xếp lại mảng B với thứ tự tăng dần
+ + Tịnh tiến con trỏ p2 để duyệt cho lần tiếp theo.
+
+ 
