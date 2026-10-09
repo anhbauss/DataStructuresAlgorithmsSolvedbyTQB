@@ -4,7 +4,7 @@
 using namespace std;
 
 int count(int A[] ,int n,int target);
-void swap_and_push(int* a,int target_1,int* b, int target_2);
+void swap_and_push(int*& a,int target_1,int*& b, int target_2);
 
 int main(){
     int n;
@@ -25,9 +25,13 @@ int main(){
     while(p1!=A+count_0 && p2!=A+count_0+count_1){
         swap_and_push(p1,0,p2,1);
     }
+    p1 =A;
+    p2 = A+count_0;
     while(p1!=A+count_0 && p3!=A+count_0+count_1+count_2){
         swap_and_push(p1,0,p3,2);
     }
+    p1 = A ;
+    p3 = A + count_0 + count_1;
     while(p3!=A+count_0+count_1+count_2 && p2!=A+count_0+count_1){
         swap_and_push(p2,1,p3,2);
     }
@@ -47,7 +51,7 @@ int count(int A[] ,int n,int target){
     }
     return c;
 }
-void swap_and_push(int* a,int target_1,int* b, int target_2){
+void swap_and_push(int*& a,int target_1,int*& b, int target_2){
     if(*a!=target_1 && *b!=target_2) {
             int temp = *a;
             *a = *b;
