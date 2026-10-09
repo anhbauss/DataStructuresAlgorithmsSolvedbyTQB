@@ -25,7 +25,12 @@ int main(){
     while(p1!=A+count_0 && p2!=A+count_0+count_1){
         swap_and_push(p1,0,p2,1);
     }
-
+    while(p1!=A+count_0 && p3!=A+count_0+count_1+count_2){
+        swap_and_push(p1,0,p3,2);
+    }
+    while(p3!=A+count_0+count_1+count_2 && p2!=A+count_0+count_1){
+        swap_and_push(p1,0,p2,1);
+    }
     return 0;
 }
 
