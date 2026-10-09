@@ -27,25 +27,24 @@ int main(){
     p1 = A ;
     p2 = A + count_0;
     while(p1!=A+count_0 && p2!=A+count_0+count_1+count_2){
-        if(*p1!=0) p1++;
-        if(*p2!=0)  p2++;
-        else if(*p1==0&&*p2==0) swap(p1,p2);
+        if(*p1==0) p1++;
+        else if(*p2!=0)  p2++;
+        else { 
+            swap(p1,p2);
+            p1++;
+            p2++;
+        }
     }
-    p1 =A;
-    p2 = A+count_0;
-    while(p1!=A+count_0+count_1+count_2 && p2!=A+count_0+count_1){
-        if(*p1!=1) p1++;
-        if(*p2!=1)  p2++;
-        else if(*p1==1&&*p2==1) swap(p1,p2);
-        if(p1==A+count_0) p1=A+count_0+count_1;
-    }
-
-    p1 = A ;
+    p1 =A+count_0;
     p2 = A+count_0+count_1;
-    while(p1!=A+count_0+count_1 && p2!=A+count_0+count_1+count_2){
-        if(*p1!=1) p1++;
-        if(*p2!=1)  p2++;
-        else if(*p1==1&&*p2==1) swap(p1,p2);
+    while(p1<A+count_0+count_1 && p2<A+n){
+        if(*p1==1) p1++;
+        else if(*p2!=1)  p2++;
+        else  {
+            swap(p1,p2);
+            p1++;
+            p2++;
+        }
     }
     cout<<"{";
     for(int i=0;i<n;i++){
