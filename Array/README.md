@@ -32,4 +32,15 @@
  + Chỉ số của phần tử đầu tiên của subarray là vị trí phần tử thứ nhất của mảng sum prefix và phần tử cuối cùng là vị trí phần tử thứ hai của mảng sum prefix + 1
  + Duyệt và đưa ra các mảng con
  + Tìm mảng lớn nhất bằng cách độ lệch của chỉ số phần tử đầu tiên và cuối cùng của mảng subarray là lớn nhất
- 
+
+# Ex8:
+## Chi tiết giải thuật tìm dãy có tổng bằng 0 lớn nhất (số phần tử 0 bằng số phần tử 1)
+ + Tạo một vector<pair<int,int>> để lưu các subarray có tổng bằng 0 lớn nhất
+ + Tạo một vector<int> temp để lưu trữ tạm thời subarray
+ + Duyệt qua các phần tử trong mảng input ban đầu bằng biến i, mục đích để tìm các subarray bắt đầu với phần tử tại i
+ + Xóa vector<int> lưu trữ tạm thời trước đó để chuẩn bị cho subarray mới
+ + Tạo biến count_0,count_1 để đếm các giá trị 0 và 1 trong subarray, biến max_size để biết kích thước subarray lớn nhất đã nhận được
+ + Duyệt qua các phần tử trong mảng input với biến j, bắt đầu với vị trí i
+ + Lần lượt đẩy các phần tử trong mảng input vào, nếu phần tử đó là 0 thì tăng count_0 lên 1 đơn vị, ngược lại nếu là 1 thì tăng count_1 lên 1 đơn vị.
+ + Kiểm tra xem nếu count_0 == count_1 thì tức là subarray đang có tổng bằng 0
+ + Lúc này, nếu thêm điều kiện kích thước subarray lớn hơn hoặc bằng max_size: gán max_size= temp.size(); lớn hơn thì xóa và đẩy vào data_structure ban đầu; bằng nhau thì đẩy vào.

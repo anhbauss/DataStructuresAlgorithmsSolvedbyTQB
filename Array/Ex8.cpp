@@ -31,6 +31,9 @@ vector<pair<int,int>> find_array_has_sum_0(int A[],int n){
                 result.clear();
                 day(result,pair<int,int>{i,j});
             }
+            else if(count_0 == count_1 && temp.size()==max_size){
+                day(result,pair<int,int>{i,j});
+            }
         }
     }
     return result;
@@ -46,11 +49,16 @@ int main(){
     }
     vector<pair<int,int>> rs;
     rs = find_array_has_sum_0(A,n);
-    cout<<"Largest array is {";
+    cout<<"Largest array is ";
     if(rs.empty()!=1){
-        int i_max = rs[0].first;
-        int j_max = rs[0].second;
+    for (int j=0;j<rs.size();j++){
+        cout<<"{";
+        int i_max = rs[j].first;
+        int j_max = rs[j].second;
         for(int i=i_max;i<=j_max;i++) cout<<" "<<A[i]<<",";
+        cout<<"}";
+        if(j<rs.size()-1) cout<<" or ";
     } 
-    cout<<"}";
+    }
+
 }
