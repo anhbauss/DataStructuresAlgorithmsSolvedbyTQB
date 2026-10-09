@@ -31,4 +31,15 @@ int soluong(const vector<int>& mang ){
    auto kt = mang.end();
    return kt-bd;
 }
+
+template <typename It,typename T1, typename T2>
+void day(T1<T2>& A,T2 B){
+vt = T1.begin();
+while(vt!=NULL){
+  vt++;
+}
+*vt = B;
+return;
+}
+
 #endif
