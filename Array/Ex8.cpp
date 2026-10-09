@@ -1,12 +1,11 @@
 #include<stdio.h>
 #include<iostream>
 #include<vector>
-#include<deque>
 using namespace std;
 
-int count_1_in_dq(const deque<int>& dq){
+int count_1_in_dq(const vector<int>& vt){
     int count =0;
-    for(auto i : dq){
+    for(auto i : vt){
         if(i==1) count++;
     }
     return count;
@@ -14,7 +13,7 @@ int count_1_in_dq(const deque<int>& dq){
 
 vector<pair<int,int>> find_array_has_sum_0(int A[],int n){
     vector<pair<int,int>> result;
-    deque<int> B,temp;
+    vector<int> B,temp;
     for(int i=0;i<n;i++){
         B.push_back(A[i]);
     }
