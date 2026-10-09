@@ -29,7 +29,13 @@ int main(){
         swap_and_push(p1,0,p3,2);
     }
     while(p3!=A+count_0+count_1+count_2 && p2!=A+count_0+count_1){
-        swap_and_push(p1,0,p2,1);
+        swap_and_push(p2,1,p3,2);
+    }
+    cout<<"{";
+    for(int i=0;i<n;i++){
+      if(i<n-1)   
+        cout<<" "<<A[i]<<",";
+      else cout<<" "<<A[i]<<" }"<<endl;
     }
     return 0;
 }
@@ -49,8 +55,12 @@ void swap_and_push(int* a,int target_1,int* b, int target_2){
             a++;
             b++;
         }
-    else if(*a!=0 && *b==1) b++;
-    else if(*a==0 && *b!=1) a++;
+    else if(*a!=target_1 && *b==target_2) b++;
+    else if(*a==target_1 && *b!=target_2) a++;
+    else {
+        a++;
+        b++;
+    }
     return;
 }
 
