@@ -3,6 +3,20 @@
 #include<vector>
 using namespace std;
 
+vector<pair<int,int>> find_array_has_sum_0(int A[],int n){
+    vector<int> B;
+    for(int i=0;i<n;i++){
+        B.push_back(A[i]);
+    }
+    int count=0;
+    for(int i=0;i<n;i++){
+    for(auto b : B){
+    if(b==1) count++;
+    }
+    }
+
+}
+
 int main(){
     int n;
     cout<<"Vui long nhap gia tri cua n: "<<endl;
@@ -12,7 +26,7 @@ int main(){
         cin>>A[i];
     }
     vector<pair<int,int>> rs;
-    rs = find_largest_array(A,n);
+    rs = find_array_has_sum_0(A,n);
     int i_max =0 ;
     int j_max =0;
     cout<<"Largest array is {";
