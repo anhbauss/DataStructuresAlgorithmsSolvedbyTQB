@@ -1,20 +1,39 @@
 #include<stdio.h>
 #include<iostream>
 #include<vector>
+#include<deque>
 using namespace std;
 
 vector<pair<int,int>> find_array_has_sum_0(int A[],int n){
-    vector<int> B;
+    vector<pair<int,int>> result;
+    deque<int> B,temp;
     for(int i=0;i<n;i++){
         B.push_back(A[i]);
     }
-    int count=0;
+    temp=B
     for(int i=0;i<n;i++){
-    for(auto b : B){
-    if(b==1) count++;
+        int count=0;
+        for(int j=0;j<i;j++){
+            temp.pop_front();
+        }
+        for(auto b : temp){
+        if(b==1) count++;
+        }
+        if(count_1_in_dq(temp)%2!=0){
+        while(true){
+            if(*(temp.end()-1)==1) {
+                temp.pop_back();
+                break;
+            }
+            else temp.pop_back();
+        } 
+        }
+    if(temp.size()>B.size()) {
+        B = temp;
+        result.push_back({i,i+temp.size()});
     }
+    
     }
-
 }
 
 int main(){
