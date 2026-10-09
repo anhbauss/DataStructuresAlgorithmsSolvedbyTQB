@@ -45,6 +45,20 @@
  + Kiểm tra xem nếu count_0 == count_1 thì tức là subarray đang có tổng bằng 0
  + Lúc này, nếu thêm điều kiện kích thước subarray lớn hơn hoặc bằng max_size: gán max_size= temp.size(); lớn hơn thì xóa và đẩy vào data_structure ban đầu; bằng nhau thì đẩy vào.
 
+# Ex9:
+## Chi tiết giải thuật sắp xếp mảng chứa các phần tử 0, 1 và 2
+ + Input: Mảng A có N phần tử, các phần tử trong mảng chỉ gồm 0, 1 và 2
+ + Đếm số lượng phần tử 0, 1 và 2 trong mảng, lần lượt lưu vào count_0, count_1 và count_2
+ + Dựa vào số lượng đã đếm được, chia mảng thành ba vùng: vùng đầu chứa 0, vùng giữa chứa 1 và vùng cuối chứa 2
+ + Vùng chứa 0 bắt đầu từ A đến A + count_0
+ + Vùng chứa 1 bắt đầu từ A + count_0 đến A + count_0 + count_1
+ + Vùng chứa 2 bắt đầu từ A + count_0 + count_1 đến A + count_0 + count_1 + count_2
+ + Dùng hai con trỏ p1 và p2 để tìm phần tử sai vùng và phần tử đúng cần đổi vào vùng đó
+ + Đưa tất cả phần tử 0 về vùng đầu bằng cách tìm vị trí không phải 0 ở vùng đầu và tìm giá trị 0 ở phần sau rồi đổi chỗ
+ + Sau khi vùng đầu đã đúng, đưa tất cả phần tử 1 về vùng giữa bằng cách tìm vị trí không phải 1 ở vùng giữa và tìm giá trị 1 ở phần sau rồi đổi chỗ
+ + Sau khi vùng 0 và vùng 1 đã đúng, các phần tử còn lại tự động thuộc vùng 2
+ + In ra mảng sau khi đã được sắp xếp theo thứ tự 0, 1, 2
+
 # EX10:
 ## Chi tiết giải thuật đảo hai mảng sao cho khi ghép liền kề hai mảng thì được một dãy tăng dần
  + Input: Mảng A có N phần tử, mảng B có M phần tử
