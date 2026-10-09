@@ -47,12 +47,10 @@ int main(){
     vector<pair<int,int>> rs;
     rs = find_array_has_sum_0(A,n);
     cout<<"Largest array is {";
-    for(auto p : rs){
-    if(p.second-p.first>=j_max-i_max){
-        for(int i = i_max;i<=j_max;i++){
-            cout<<" "<<A[i]<<",";
-        }
+    if(rs.empty()!=1){
+        int i_max = rs[0].first;
+        int j_max = rs[0].second;
+        for(int i=i_max;i<=j_max;i++) cout<<" "<<A[i]<<",";
     } 
-    }
     cout<<"}";
 }
