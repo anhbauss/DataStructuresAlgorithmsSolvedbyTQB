@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<iostream>
 #include<deque>
+#include"ALGORITHM.h"
 using namespace std;
 
 deque<int> sort(int num[],int n){
@@ -15,7 +16,7 @@ deque<int> sort(int num[],int n){
         }
     }
     for(int i=0;i<n;i++){
-        dq.push_back(num[i]);
+    day(dq,num[i]);
     }
     return dq;
 }

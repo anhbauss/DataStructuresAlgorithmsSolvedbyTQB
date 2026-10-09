@@ -10,13 +10,14 @@ Output: Subarray with zero-sum exists The subarrays with a sum of 0 are:
 #include<iostream>
 #include<vector>
 #include<set>
+#include"ALGORITHM.h"
 using namespace std; 
 vector<int> sum_prefix(int num[],int n){
     vector<int> sumprefix;
     int sum = 0;
     for(int i=0;i<n;i++){
     sum+=num[i];
-    sumprefix.push_back(sum);
+    day(sumprefix,sum);
     }
     return sumprefix;    
 }
