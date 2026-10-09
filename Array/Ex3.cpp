@@ -23,7 +23,7 @@ cout_data sum_prefix(int num[],int n){
     vector<int> sum_prefix_v;
     for(int i=0;i<n;i++){
         sum +=num[i];
-        sum_prefix_v.push_back(sum);
+        day(sum_prefix_v,sum);
     }
     int count =0;
     for(auto it= sum_prefix_v.begin();it!=sum_prefix_v.end();++it){
