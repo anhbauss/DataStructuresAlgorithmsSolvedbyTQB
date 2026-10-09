@@ -3,7 +3,7 @@
 using namespace std;
 void sort(int A[],int n);
 void swap(int* p1, int* p2);
-void sap_xep(int* p);
+void sap_xep(int* p,int* end);
 int main(){
     int n,m;
     cout<<"Vui long nhap gia tri cua n,m:"<<endl;
@@ -21,10 +21,11 @@ int main(){
     p1 = A;
     p2= B;
     while(p1!=A+n){
+        p2=B;
         while(p2!=B+m){
             if(*p2<*p1){
                 swap(p1,p2);
-                sap_xep(p2);
+                sap_xep(p2,B+m);
             }
             p2++;
         }
@@ -49,7 +50,7 @@ int main(){
 }
 void sort(int A[],int n){
     for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
+        for(int j=0;j<n-1;j++){
             if(A[j]>A[j+1]){
                 int temp = A[j];
                 A[j]= A[j+1];
@@ -65,9 +66,9 @@ void swap(int*p1, int*p2){
     *p2 = temp;
     return;
 }
-void sap_xep(int*p){
+void sap_xep(int*p,int * end){
     int* t1 = p;
-    while(*t1>*p){
+    while(*t1>*p,p<end){
         t1++;
     }
     int temp = *t1;
