@@ -26,7 +26,7 @@ int main(){
                 swap(p1,p2);
                 sap_xep(p2,B+m);
             }
-            p2++;
+        p2++;
         p1++;
     }
     cout<<"X[] = {";
