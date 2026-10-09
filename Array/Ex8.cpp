@@ -18,29 +18,16 @@ vector<pair<int,int>> find_array_has_sum_0(int A[],int n){
     for(int i=0;i<n;i++){
         B.push_back(A[i]);
     }
-    temp=B;
+    int max_size =0;
     for(int i=0;i<n;i++){
-        int count=0;
-        for(int j=0;j<i;j++){
-            temp.pop_front();
+        temp.clear();
+        int count_0=0,count_1=0;
+        for(int j=i;j<n;j++){
+            temp.push_back(B[j]);
+            if(B[j]==0) count_0++;
+            else if(B[j]==1) count_1++;
+            i
         }
-        for(auto b : temp){
-        if(b==1) count++;
-        }
-        if(count_1_in_dq(temp)%2!=0){
-        while(true){
-            if(*(temp.end()-1)==1) {
-                temp.pop_back();
-                break;
-            }
-            else temp.pop_back();
-        } 
-        }
-    if(temp.size()>B.size()) {
-        B = temp;
-        result.push_back({i,i+temp.size()});
-    }
-    
     }
     return result;
 }
