@@ -15,10 +15,15 @@ int main(){
     for(int i=0;i<m;i++){
         cin>>B[i];
     }
+    //Day cac phan tu khac khong trong A ve cuoi
     int *p1,*p2;
-    p1=A;
-    p2=B;
-    while(*p1!=A+n && *p2!=B+m){
-    if(p1==0) p1++;
+    p2=A+n;
+    p1=p2;
+    while(p2!=0){
+        p2--;
+        while(p1!=0) {
+            *p2=*p1;
+            p1--;
+        }
     }
 }
