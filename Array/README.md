@@ -69,4 +69,17 @@
  + Dùng hàm sap_xep để sắp xếp lại mảng B với thứ tự tăng dần
  + Tịnh tiến con trỏ p2 để duyệt cho lần tiếp theo.
 
+# EX11:
+## Chi tiết giải thuật điền mảng Y vào mảng X:
+ + Input: Mảng X có n phần tử với các chỗ trống được biểu diễn là số 0, mảng Y có m phần tử được sắp xếp theo thứ tự.
+
+ + Dồn các phần tử khác không trong mảng X về cuối mảng. Cụ thể:
+ + Khởi tạo hai con trỏ ở cuối mảng là p1 và p2. Lần lượt lùi hai con trỏ về đầu mảng, con trỏ p1 chạy trước, nếu gặp phần tử khác không thì dừng lại; con trỏ p2 chạy sau, nếu gặp phần tử bằng 0 thì dừng lại. Nếu *p1 != 0 và *p2 == 0 thì đảo giá trị của hai con trỏ.
+
+ + Đưa các phần tử trong mảng Y vào các vị trí số 0 đầu tiên của mảng X. Đưa con trỏ p2 đến vị trí khác không đầu tiên của mảng X. Đưa con trỏ p1 đến vị trí đầu tiên của mảng Y, tạo thêm con trỏ p3 nằm ở vị trí đầu tiên của mảng X.
+
+ + Đưa các phần tử vào bằng cách so sánh: nếu *p1 < *p2 thì gán giá trị con trỏ p1 cho con trỏ p3, tịnh tiến con trỏ p1 và p3; còn nếu ngược lại thì gán giá trị con trỏ p2 cho con trỏ p3, tịnh tiến con trỏ p2 và p3.
+
+ + Quá trình này được lặp lại cho đến khi con trỏ p3 gặp p2. 
+
  
