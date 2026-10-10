@@ -9,9 +9,11 @@ int main(){
     cin>>m;
     int A[n];
     int B[m];
+    cout<<"Vui long nhap mang X: "<<endl;
     for(int i=0;i<n;i++){
         cin>>A[i];
     }
+    cout<<"Vui long nhap mang Y: "<<endl;
     for(int i=0;i<m;i++){
         cin>>B[i];
     }
@@ -47,7 +49,10 @@ int main(){
             p3++;
         }
     }
+    cout<<"X[] = {";
     for(int i=0;i<n;i++){
-        cout<<A[i]<<" ";
+        if(i<n-1)
+        cout<<" "<<A[i]<<",";
+        else cout<<" "<<A[i]<<" }";    
     }
 }
