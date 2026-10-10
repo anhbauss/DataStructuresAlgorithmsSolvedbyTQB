@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    int n;
+    int n,m;
     cout<<"Vui long nhap gia tri cua m,n:"<<endl;
     cin>>n;
     cin>>m;
@@ -17,7 +17,7 @@ int main(){
     }
     //Day cac phan tu khac khong trong A ve cuoi
     int *p1,*p2;
-    p2=A+n;
+    p2=A+n-1;
     p1=p2;
     while(p2>=A && p1>=A){
         if(*p2!=0) p2--;
@@ -30,7 +30,7 @@ int main(){
             p1--;
         }
     }
-    p2=A+n;
+    p2=A+n-1;
     while(*p2!=0) p2--;
     p2++;
     p1=B;
