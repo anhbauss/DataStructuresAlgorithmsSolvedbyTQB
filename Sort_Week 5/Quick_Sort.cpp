@@ -2,10 +2,15 @@
 #include<iostream>
 
 using namespace std;
+
+struct data_type{
+    int num;
+    int Arr[];
+};
 void quick_sort(int A[],int n);
 int main(){
  int n;
- cout<<"Vui long nhap gia tri cua n":<<endl;
+ cout<<"Vui long nhap gia tri cua n: "<<endl;
  cin>>n;
  int A[n];
  cout<<"Vui long nhap gia tri vao mang:"<<endl;
@@ -13,7 +18,12 @@ int main(){
     cin>>A[i];
  }
  //A[n]= 101,23,57,13,25,121,87,36,13,204,111,89,59
-
+ data_type bd;
+ bd.num= n;
+ for(int i=0;i<n;i++){
+    bd.Arr[i]=A[i];
+ }
+ 
 }
 
 void quick_sort(int A[],int n){
