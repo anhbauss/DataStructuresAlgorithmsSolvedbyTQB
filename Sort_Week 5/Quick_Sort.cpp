@@ -42,14 +42,14 @@ data_type quick_sort(data_type& Bo){
     p1=Bo.Arr+1;
     p2=Bo.Arr+Bo.num-1;
     while(p1<=p2){
-        if(*p1>=pivot && *p2<=pivot){
-        doigiatri(p1,p2);
-        p1++;
-        p2--;
         for(int i=0;i<Bo.num;i++){
             if(i==Bo.num-1) cout<<" "<<Bo.Arr[i]<<endl;
             else cout<<" "<<Bo.Arr[i];
         }
+        if(*p1>=pivot && *p2<=pivot){
+        doigiatri(p1,p2);
+        p1++;
+        p2--;
         continue;
         }
         if(p1 <= Bo.Arr + Bo.num - 1 && *p1<pivot ) p1++;
