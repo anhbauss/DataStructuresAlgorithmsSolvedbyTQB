@@ -23,14 +23,14 @@ int main(){
  for(int i=0;i<n;i++){
     bd.Arr[i]=A[i];
  }
- 
+
 }
 
-void quick_sort(int A[],int n){
-    int pivot = A[0];
+data_type quick_sort(data_type& Bo){
+    int pivot = Bo.Arr[0];
     int* p1, *p2;
-    p1=A+1;
-    p2=A+n-2;
+    p1=Bo.Arr+1;
+    p2=Bo.Arr+Bo.num-2;
     while(p1<=p2){
         if(*p1>=pivot && *p2<=pivot){
         swap(p1,p2);
@@ -40,5 +40,8 @@ void quick_sort(int A[],int n){
         }
         if(*p1<pivot) p1++;
         if(*p2>pivot) p2--;
+    }
+    for(int i=0;i<=(int)Bo.num/2;i++){
+        
     }
 }
