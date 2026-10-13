@@ -9,7 +9,7 @@ struct data_type{
 };
 data_type quick_sort(data_type& Bo);
 void doigiatri(int *p1,int *p2);
-data_type concast(const data_type con1,const data_type con2,data_type& Bo);
+data_type concast(const data_type con1,const data_type con2,data_type& Bo,int pivot);
 int main(){
  int n;
  cout<<"Vui long nhap gia tri cua n: "<<endl;
@@ -46,15 +46,14 @@ data_type quick_sort(data_type& Bo){
         }
         continue;
         }
-        if(*p1<pivot && p1 <= Bo.Arr + Bo.num - 1) p1++;
-        if(*p2>pivot && p2 >= Bo.Arr + 1) p2--;
+        if(p1 <= Bo.Arr + Bo.num - 1 && *p1<pivot ) p1++;
+        if( p2 >= Bo.Arr + 1 && *p2>pivot) p2--;
     }
     doigiatri(Bo.Arr,p2);
     int giua = p2- Bo.Arr;
     data_type con1,con2;
     con1.num=giua;
     con2.num=Bo.num-con1.num-1;
-    if(con2.num<=0) return Bo;
     for(int i=0;i<con1.num;i++){
         con1.Arr[i]=Bo.Arr[i];
     }
@@ -63,7 +62,7 @@ data_type quick_sort(data_type& Bo){
     }
     quick_sort(con1);
     quick_sort(con2);
-    Bo=concast(con1,con2,Bo);
+    Bo=concast(con1,con2,Bo,Bo.Arr[giua]);
     return Bo;
 }
 void doigiatri(int* p1, int* p2){
@@ -72,13 +71,14 @@ void doigiatri(int* p1, int* p2){
     *p2 = temp;
     return;
 }
-data_type concast(const data_type con1,const data_type con2,data_type& Bo){
-    int i=0;
-    for(;i<con1.num;i++){
+data_type concast(const data_type con1,const data_type con2,data_type& Bo,int pivot){
+    int count =0;
+    for(int i=0;i<con1.num;i++){
         Bo.Arr[i]=con1.Arr[i];
     }
-    i++;
-    for(;i<Bo.num;i++){
+    Bo.Arr[count]= pivot;
+    count++;
+    for(int i=0;i<con2.num;i++){
         Bo.Arr[i]=con2.Arr[i];
     }
     return Bo;
