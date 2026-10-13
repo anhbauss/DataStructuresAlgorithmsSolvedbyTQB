@@ -1,11 +1,13 @@
 #include<stdio.h>
 #include<iostream>
+#define MAX 100
 
 using namespace std;
 
+
 struct data_type{
     int num;
-    int Arr[];
+    int Arr[MAX];
 };
 data_type quick_sort(data_type& Bo);
 void doigiatri(int *p1,int *p2);
@@ -26,6 +28,10 @@ int main(){
     bd.Arr[i]=A[i];
  }
  quick_sort(bd);
+ for(int i=0;i<bd.num;i++){
+            if(i==bd.num-1) cout<<" "<<bd.Arr[i]<<endl;
+            else cout<<" "<<bd.Arr[i];
+        }
  return 1;
 }
 
@@ -75,11 +81,13 @@ data_type concast(const data_type con1,const data_type con2,data_type& Bo,int pi
     int count =0;
     for(int i=0;i<con1.num;i++){
         Bo.Arr[i]=con1.Arr[i];
+        count++;
     }
     Bo.Arr[count]= pivot;
     count++;
     for(int i=0;i<con2.num;i++){
-        Bo.Arr[i]=con2.Arr[i];
+        Bo.Arr[count]=con2.Arr[i];
+        count++;
     }
     return Bo;
 }
