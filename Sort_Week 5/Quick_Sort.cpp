@@ -7,7 +7,7 @@ struct data_type{
     int num;
     int Arr[];
 };
-void quick_sort(int A[],int n);
+data_type quick_sort(data_type& Bo);
 void doigiatri(int *p1,int *p2);
 data_type concast(const data_type con1,const data_type con2,data_type& Bo);
 int main(){
@@ -26,6 +26,7 @@ int main(){
     bd.Arr[i]=A[i];
  }
  quick_sort(bd);
+ return 1;
 }
 
 data_type quick_sort(data_type& Bo){
