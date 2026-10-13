@@ -19,5 +19,16 @@ int main(){
 void quick_sort(int A[],int n){
     int pivot = A[0];
     int* p1, *p2;
-    
+    p1=A+1;
+    p2=A+n-2;
+    while(p1<=p2){
+        if(*p1>=pivot && *p2<=pivot){
+        swap(p1,p2);
+        p1++;
+        p2--;
+        continue;
+        }
+        if(*p1<pivot) p1++;
+        if(*p2>pivot) p2--;
+    }
 }
