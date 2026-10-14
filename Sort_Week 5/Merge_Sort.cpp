@@ -3,7 +3,13 @@
 
 using namespace std;
 
+struct recurssion_type{
+    int* p;
+    int num;
+};
+
 void Merge_Sort(int A[],int n);
+
 int main(){
  int n;
  cout<<"Vui long nhap gia tri cua n: "<<endl;
@@ -19,5 +25,9 @@ int main(){
 }
 
 void Merge_Sort(int A[],int n){
-    
+    int a;
+    int index[a];
+    int low=0;
+    int high= n-1;
+    int giua = (int)(low+high)/2;
 }
