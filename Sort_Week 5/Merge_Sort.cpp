@@ -1,33 +1,17 @@
 #include<stdio.h>
 #include<iostream>
-
+#include<stack>
 using namespace std;
 
-struct recurssion_type{
-    int* p;
-    int num;
-};
-
-void Merge_Sort(int A[],int n);
-
-int main(){
- int n;
- cout<<"Vui long nhap gia tri cua n: "<<endl;
- cin>>n;
- int A[n];
- cout<<"Vui long nhap gia tri vao mang:"<<endl;
- for(int i=0;i<n;i++){
-    cin>>A[i];
- }
- //A[n]= 101,23,57,13,25,121,87,36,13,204,111,89,59
- Merge_Sort(A,n);
- return 0;
-}
-
-void Merge_Sort(int A[],int n){
-    int a;
-    int index[a];
-    int low=0;
-    int high= n-1;
-    int giua = (int)(low+high)/2;
+void merge_two_arr(int A[], int* p1,int *p2, int size_A){
+   int *p1_temp,*p2_temp;
+   p1_temp = p1;
+   p2_temp = p2;
+   while(p1_temp<p2_temp &&  p2_temp<A+size_A){
+      if(*p1_temp<=*p2_temp) p1_temp++;
+      else{
+        int temp = *p2_temp;
+        for(int* p=p2_temp-1;p>=p1_temp;p--)
+      }
+   }
 }
