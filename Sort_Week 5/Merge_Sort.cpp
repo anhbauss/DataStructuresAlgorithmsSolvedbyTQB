@@ -11,7 +11,19 @@ void merge_two_arr(int A[], int* p1,int *p2, int size_A){
       if(*p1_temp<=*p2_temp) p1_temp++;
       else{
         int temp = *p2_temp;
-        for(int* p=p2_temp-1;p>=p1_temp;p--)
+        for(int* p=p2_temp-1;p>=p1_temp;p--){
+            int a = *p;
+            p++;
+            *p = a;
+            p--;
+        }
+        *p1_temp = temp;
+        p1_temp++;
+        p2_temp++;
       }
    }
+}
+
+void merge_sort(int A[], int i, int j){
+
 }
