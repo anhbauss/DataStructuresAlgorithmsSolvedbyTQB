@@ -22,8 +22,21 @@ void merge_two_arr(int A[], int* p1,int *p2, int size_A){
         p2_temp++;
       }
    }
+   return;
 }
 
 void merge_sort(int A[], int i, int j){
+    if(i==j) return;
+    int giua= (int)((i+j)/2);
+    merge_sort(A,i,giua);
+    merge_sort(A,giua+1,j);
+    int *p1= A+i;
+    int *p2= A+giua;
+    int size_arr = j-i;
+    merge_two_arr(A,p1,p2,size_arr);
+    return;
+}
 
+int main(){
+    
 }
