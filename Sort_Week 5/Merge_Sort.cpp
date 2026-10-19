@@ -3,7 +3,7 @@
 #include<stack>
 using namespace std;
 
-void merge_two_arr(int A[], int* p1,int *p2, int size_A){
+void merge_two_arr(int A[], int* p1,int *p2, int size_A, int n){
    int *p1_temp,*p2_temp;
    p1_temp = p1;
    p2_temp = p2;
@@ -22,21 +22,36 @@ void merge_two_arr(int A[], int* p1,int *p2, int size_A){
         p2_temp++;
       }
    }
+   for(int i=0;i<n;i++){
+    if(i<n-1)
+    cout<<A[i]<<" ";
+    else cout<<A[i]<<endl;
+   }
    return;
 }
 
-void merge_sort(int A[], int i, int j){
+void merge_sort(int A[], int i, int j,int n){
     if(i==j) return;
     int giua= (int)((i+j)/2);
-    merge_sort(A,i,giua);
-    merge_sort(A,giua+1,j);
+    merge_sort(A,i,giua,n);
+    merge_sort(A,giua+1,j,n);
     int *p1= A+i;
     int *p2= A+giua;
     int size_arr = j-i;
-    merge_two_arr(A,p1,p2,size_arr);
+    merge_two_arr(A,p1,p2,size_arr,n);
     return;
 }
 
 int main(){
-    
+int n;
+ cout<<"Vui long nhap gia tri cua n: "<<endl;
+ cin>>n;
+ int A[n];
+ cout<<"Vui long nhap gia tri vao mang:"<<endl;
+ for(int i=0;i<n;i++){
+    cin>>A[i];
+ }
+ //A[n]= 101,23,57,13,25,121,87,36,13,204,111,89,59
+ merge_sort(A,0,n-1,n);
+ return 0;
 }
