@@ -3,11 +3,11 @@
 #include<stack>
 using namespace std;
 
-void merge_two_arr(int A[], int* p1,int *p2, int size_A, int n){
+void merge_two_arr(int A[], int* p1,int *p2, int* p3, int n){
    int *p1_temp,*p2_temp;
    p1_temp = p1;
    p2_temp = p2;
-   while(p1_temp<p2_temp &&  p2_temp<A+size_A){
+   while(p1_temp<p2_temp &&  p2_temp<= p3){
       if(*p1_temp<=*p2_temp) p1_temp++;
       else{
         int temp = *p2_temp;
@@ -35,10 +35,7 @@ void merge_sort(int A[], int i, int j,int n){
     int giua= (int)((i+j)/2);
     merge_sort(A,i,giua,n);
     merge_sort(A,giua+1,j,n);
-    int *p1= A+i;
-    int *p2= A+giua;
-    int size_arr = j-i;
-    merge_two_arr(A,p1,p2,size_arr,n);
+    merge_two_arr(A,A+i,A+giua+1,A+j,n);
     return;
 }
 
