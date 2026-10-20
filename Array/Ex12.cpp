@@ -36,20 +36,20 @@ int main(){
 vector<int> find_array(int A[],int n){
     int *p1;
     int *p2;
-    p1=A;
     p2=A+n-1;
     vector<int> index;
     int max_count=-1;
     int best_index=-1;
+    while(p2>=A){
+    if(*p2==0){
+        p2--;
+        continue;
+    }
     while(p1<=p2){
     if(*p1==0) {
         p1++;
         continue;
-    }
-    if(*p2==0) {
-        p2--;
-        continue;
-    }        
+    }      
     int* ct=p1;
     int count_0=0;
     int count_num=0;
@@ -76,6 +76,7 @@ vector<int> find_array(int A[],int n){
         temp_index=-1;
     }
     if(count_num>max_count){
+        max_count=count_num;
         index.clear();
         if(temp_index==-1){
             index.push_back(two.first);
@@ -90,6 +91,8 @@ vector<int> find_array(int A[],int n){
         }
         else index.push_back(temp_index);
     }
-}
+    }
+    p1=A;
+    }
     return index;
 }
