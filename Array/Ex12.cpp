@@ -41,33 +41,18 @@ vector<int> find_array(int A[],int n){
     vector<int> index;
     int max_count=-1;
     int best_index=-1;
-    while(p1<p2){
+    while(p1<=p2){
         if(*p1==0){
         int count_0=0;
         int count_num=0;
         int* ct = p1;
         while(ct<=p2){
-            if(*ct==0) ct++;
-            else count_num++;
+            if(*ct == 0) count_0++;
             if(count_0>1) break;
-            else if(count_0==1) {
-                count_num++;
-                if(count_num>best_index) {
-                    max_count=count_num;
-                    best_index=ct-p1;
-            } 
+            count_num++;
+            ct++;
         }
-        if(count_0==0){
-            if(count_num++==max_count){
-                index.push_back(p1-A-1);
-            }
-            else if(count_num++>max_count){
-                index.clear();
-                index.push_back(best_index);
-            }
-        }
-        }
-        
+        if(count_num>max_count){}
     }
     p1++;
 }
