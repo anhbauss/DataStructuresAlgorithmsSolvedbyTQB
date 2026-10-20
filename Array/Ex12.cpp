@@ -27,3 +27,33 @@ int main(){
     vector<int> index;
     
 }
+
+vector<int> find_array(int A[],int n){
+    int *p1;
+    int *p2;
+    p1=A;
+    p2=A+n-1;
+    vector<int> index;
+    int count;
+    pair<int,int> data;
+    while(p1<p2){
+        if(*p1==0) p1++;
+        int count_0=0;
+        int count_num=0;
+        int* ct = p1;
+        while(ct<=p2){
+            if(*ct==1) ct++;
+            else count_0++;
+            if(count_0>1) break;
+            else{
+                count_num++;
+                if(count_num>count) count=count_num;
+            }
+        }
+        if (count_0==0){
+            count_num++;
+            
+        }
+        p1++;
+    }
+}
