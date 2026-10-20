@@ -42,4 +42,13 @@ A.insert(vt,B);
 return;
 }
 
+template <typename T1,typename It>
+void xoa(T1& A, It first, It last){
+  while (first != last){
+    *first = NULL;
+    ++first;
+  }
+  return;
+}
+
 #endif

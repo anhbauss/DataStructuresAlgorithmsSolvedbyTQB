@@ -76,30 +76,30 @@ vector<int> find_array(int A[],int n){
     }
     if(count_num>max_count){
         max_count=count_num;
-        index.clear();
+        xoa(index,index.begin(),index.end());
         if(temp_index==-1){
             if(two.first>=0 && tim(index.begin(),index.end(),two.first)== index.end()) {
-                index.push_back(two.first);
+                day(index,two.first);
             }
             if(two.second<n && tim(index.begin(),index.end(),two.second)== index.end()) 
-            index.push_back(two.second);
+               day(index,two.second);
         }
         else{
             if(tim(index.begin(),index.end(),temp_index)== index.end())
-            index.push_back(temp_index);
+            day(index,temp_index);
         }
     }
     else if(count_num==max_count){
         if(temp_index==-1){
             if(two.first>=0 && tim(index.begin(),index.end(),two.first)== index.end()) {
-                index.push_back(two.first);
+                day(index,two.first);
             }
             if(two.second<n && tim(index.begin(),index.end(),two.second)== index.end()) 
-            index.push_back(two.second);
+               day(index,two.second);
         }
         else{
             if(tim(index.begin(),index.end(),temp_index)== index.end())
-            index.push_back(temp_index);
+            day(index,temp_index);
         }
     }
     p1++;
