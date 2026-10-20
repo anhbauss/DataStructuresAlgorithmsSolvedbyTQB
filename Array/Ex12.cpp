@@ -13,7 +13,7 @@ We need to replace index 7 to get the continuous sequence of length 6 containing
 #include<vector>
 using namespace std;
 
-
+vector<int> find_array(int A[],int n);
 
 int main(){
     int n;
@@ -24,8 +24,13 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>A[i];
     }
-    vector<int> index;
-    
+    vector<int> index= find_array(A,n);
+    cout<<"{ ";
+    for(int integer : index){
+    cout<<integer<<" ";
+    }
+    cout<<"}"<<endl;
+    return 0;
 }
 
 vector<int> find_array(int A[],int n){
@@ -42,7 +47,7 @@ vector<int> find_array(int A[],int n){
         int* ct = p1;
         while(ct<=p2){
             if(*ct==0) ct++;
-            else count_0++;
+            else count_num++;
             if(count_0>1) break;
             else if(count_0==1) {
                 count_num++;
@@ -64,3 +69,5 @@ vector<int> find_array(int A[],int n){
         
         p1++;
     }
+    return index;
+}
