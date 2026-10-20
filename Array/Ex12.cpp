@@ -34,9 +34,8 @@ int main(){
 }
 
 vector<int> find_array(int A[],int n){
-    int *p1;
-    int *p2;
-    p2=A+n-1;
+    int *p1=A;
+    int *p2=A+n-1;
     vector<int> index;
     int max_count=-1;
     int best_index=-1;
@@ -79,20 +78,22 @@ vector<int> find_array(int A[],int n){
         max_count=count_num;
         index.clear();
         if(temp_index==-1){
-            index.push_back(two.first);
-            index.push_back(two.second);
+            if(two.first>=0) index.push_back(two.first);
+            if(two.second<n) index.push_back(two.second);
         }
         else index.push_back(temp_index);
     }
     else if(count_num==max_count){
         if(temp_index==-1){
-            index.push_back(two.first);
-            index.push_back(two.second);
+            if(two.first>=0) index.push_back(two.first);
+            if(two.second<n) index.push_back(two.second);
         }
         else index.push_back(temp_index);
     }
+    p1++;
     }
     p1=A;
+    p2--;
     }
     return index;
 }
