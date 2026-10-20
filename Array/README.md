@@ -86,5 +86,15 @@
 ## Giải thuật tìm mảng số 1 liên tục sao cho mảng đó chỉ có một số 0 và tìm index của số 0 đó.
 ## Output: Có thế có rất nhiều vị trí 0 sao cho khi thay thành 1 thì đều cho ra cùng một mảng có độ dài bằng nhau và là lớn nhất.
 ## Ý tưởng: 
-Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặc chỉ có 1 số 0. Trường hợp nếu mảng đó chỉ toàn số 1 thì kiểm tra nếu đổi số 0 ở vị trí liền trước và liền cuối thành số 1 thì mảng đó có lớn nhất không. 
+Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặc chỉ có 1 số 0. 
++ Trường hợp nếu mảng đó chỉ toàn số 1 thì kiểm tra nếu đổi số 0 ở vị trí liền trước và liền cuối thành số 1 thì mảng đó có lớn nhất không. Nếu lớn nhất thì add vị trí liền trước và vị trí liền sau của mảng, nếu không lớn nhất thì vẫn lấy giá trị cũ
++ Trượng hợp nếu mảng đó chỉ có 1 số 0 thì tiếp tục kiểm tra mảng đó có lớn nhất không. Nếu lớn nhất thì thay đổi giá trị index thành giá trị mới.
+## Chi tiết giải thuật:
+ + Khai báo hai con trỏ p1 và p2 lần lượt ở vị trí đầu tiên và cuối cùng của mảng.
+ + Duyệt con trỏ p2 bằng cách lùi p2 cho đến khi *p2==1 thì dừng lại.
+ + Tạo biến tổng kết số phần tử lớn nhất của mảng con là max_count và vector<int> index để lưu trữ các index trong trường hợp các mảng đó có cùng số phần tử và là lớn nhất
+ + Lúc này, với mỗi vị trí của p2; ta tịnh tiến con trỏ p1 cho đến khi *p1==1 thì dừng lại.Tạo các biến đếm số các số 0 là count_0 và biến đếm số phần tử là count_num. 
+ + Lúc này,tại một con trỏ mới *ct duyệt từ p1 đến p2. Nếu *ct==0 thì tăng count_0 và kiểm tra ngay nếu count_0 vượt quá 1 thì break vòng lặp vì đoạn từ p1 đến p2 không tạo thành mảng con thỏa mãn, nếu count_0 chưa vượt quá 1 thì tăng count_num; lưu index vào biến tạm là temp_index. Nếu *ct ==1 thì tăng count_num.
+ + Sau khi đếm được số phần tử trong mảng con đó và tìm được vị trí số 0 thì kiểm tra: Nếu count_0==0 thì chứng tỏ mảng lúc này đang không có số không, nghĩa là index nằm ở vị trí liền trước của mảng là p1-- và liền sau của mảng là p2++; lúc này dùng một CTDL pair<int,int> để lưu hai index này và tạm gán temp_index=-1
+ + Khi đã kiểm tra, bây giờ đến lúc kiểm tra count_num có lớn hơn max_size hay không. Nếu lớn hơn xóa hết vector cũ và kiểm tra xem temp_index có bằng trừ -1 không, trong trường hợp nếu bằng thì phải đẩy hai phần từ trong pair vào vector và kèm thêm điều kiện là hai phần tử ấy chưa xuất hiện trong vector (dung hàm "tim" trong ALGORITHM.h), trong trường hợp không bằng thì đẩy temp_index vào vector và kèm thêm điểu kiện là temp_index chưa xuất hiện trong vector(tiep tuc dung ham "tim"). Nếu nhỏ hơn thì giữ nguyên vector và max_count. Nếu bằng thì làm như trường hợp lớn hơn nhưng không xóa vector cũ.
 
