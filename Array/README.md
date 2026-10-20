@@ -82,4 +82,9 @@
 
  + Quá trình này được lặp lại cho đến khi con trỏ p3 gặp p2. 
 
- 
+# EX12:
+## Giải thuật tìm mảng số 1 liên tục sao cho mảng đó chỉ có một số 0 và tìm index của số 0 đó.
+## Output: Có thế có rất nhiều vị trí 0 sao cho khi thay thành 1 thì đều cho ra cùng một mảng có độ dài bằng nhau và là lớn nhất.
+## Ý tưởng: 
+Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặc chỉ có 1 số 0. Trường hợp nếu mảng đó chỉ toàn số 1 thì kiểm tra nếu đổi số 0 ở vị trí liền trước và liền cuối thành số 1 thì mảng đó có lớn nhất không. 
+
