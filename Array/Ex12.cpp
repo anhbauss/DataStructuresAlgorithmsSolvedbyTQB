@@ -46,13 +46,7 @@ vector<int> find_array(int A[],int n){
         int count_0=0;
         int count_num=0;
         int* ct = p1;
-        while(ct<=p2){
-            if(*ct == 0) count_0++;
-            if(count_0>1) break;
-            count_num++;
-            ct++;
-        }
-        if(count_num>max_count){}
+        
     }
     p1++;
 }
