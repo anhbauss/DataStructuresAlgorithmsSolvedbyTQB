@@ -11,10 +11,10 @@ We need to replace index 7 to get the continuous sequence of length 6 containing
 #include<stdio.h>
 #include<iostream>
 #include<vector>
+#include"ALGORITHM.h"
 using namespace std;
 
 vector<int> find_array(int A[],int n);
-
 int main(){
     int n;
     cout<<"Vui long nhap so phan tu trong mang: "<<endl;
@@ -78,22 +78,35 @@ vector<int> find_array(int A[],int n){
         max_count=count_num;
         index.clear();
         if(temp_index==-1){
-            if(two.first>=0) index.push_back(two.first);
-            if(two.second<n) index.push_back(two.second);
+            if(two.first>=0 && tim(index.begin(),index.end(),two.first)== index.end()) {
+                index.push_back(two.first);
+            }
+            if(two.second<n && tim(index.begin(),index.end(),two.second)== index.end()) 
+            index.push_back(two.second);
         }
-        else index.push_back(temp_index);
+        else{
+            if(tim(index.begin(),index.end(),temp_index)== index.end())
+            index.push_back(temp_index);
+        }
     }
     else if(count_num==max_count){
         if(temp_index==-1){
-            if(two.first>=0) index.push_back(two.first);
-            if(two.second<n) index.push_back(two.second);
+            if(two.first>=0 && tim(index.begin(),index.end(),two.first)== index.end()) {
+                index.push_back(two.first);
+            }
+            if(two.second<n && tim(index.begin(),index.end(),two.second)== index.end()) 
+            index.push_back(two.second);
         }
-        else index.push_back(temp_index);
+        else{
+            if(tim(index.begin(),index.end(),temp_index)== index.end())
+            index.push_back(temp_index);
+        }
     }
     p1++;
     }
     p1=A;
     p2--;
     }
+    
     return index;
 }
