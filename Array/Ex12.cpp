@@ -35,25 +35,32 @@ vector<int> find_array(int A[],int n){
     p2=A+n-1;
     vector<int> index;
     int count;
-    pair<int,int> data;
     while(p1<p2){
         if(*p1==0) p1++;
-        int count_0=0;
+        int count_0=0,i;
         int count_num=0;
         int* ct = p1;
         while(ct<=p2){
-            if(*ct==1) ct++;
+            if(*ct==0) ct++;
             else count_0++;
             if(count_0>1) break;
-            else{
+            else if(count_0==1) {
                 count_num++;
-                if(count_num>count) count=count_num;
+                if(count_num>count) {
+                    count=count_num;
+                    i=ct-p1;
+            } 
+        }
+        if(count_0==0){
+            if(count_num++==count){
+                index.push_back(p1-A-1);
+            }
+            else if(count_num++>count){
+                index.clear();
+                index.push_back(i);
             }
         }
-        if (count_0==0){
-            count_num++;
-            
         }
+        
         p1++;
     }
-}
