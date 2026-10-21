@@ -23,6 +23,20 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>A[i];
     }
+    int product=1;
+    int B[n],C[n];
+    for(int i=0;i<n;i++){
+        product*=A[i];
+        B[i]=product;
+    }
+    product=1;
+    for(int i=n-1;i>=0;i++){
+        product*=A[i];
+        C[i]=product;
+    }
+    for (int i=0;i<n;i++){
+        if(i==0) data[i]=
+    }
     
     cout<<"( ";
     for(int i=0;i<n;i++){
