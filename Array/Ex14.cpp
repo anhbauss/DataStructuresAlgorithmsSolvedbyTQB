@@ -32,7 +32,10 @@ void shuffle(int A[],int n){
     temp=create_random_number(a,c,n,a*c);
     for(int i=0;i<n;i++){
     swap(A[i],A[temp]);
-    temp=create_random_number(a,c,n,temp);
+    temp=create_random_number(A[i]+a,A[i]+c,n,temp);
+    a= (A[i]>0)?A[i]:(-A[i]);
+    a= a%n;
+    c= a*c%n;
     }
     return;
 }

@@ -114,3 +114,10 @@ Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặ
  + Kiểm tra xem tích của hai phần từ trong pair nào lớn nhất thì in ra.
  + Kết thúc giải thuật
 
+# EX14:
+## Ý tưởng:
+ + Do điều kiện chỉ được sử dụng các thư viện chuẩn, để tạo số ngẫu nhiên thì bắt buộc phải tận dụng mảng ngẫu nhiên mà người dùng nhập vào.
+## Chi tiết giải thuật: Đảo các số trong mảng một cách ngẫu nhiên
+ + Giải thuật hàm tạo số ngẫu nhiên: Input: a,c, X_n, n( số phần tử trong mảng). Output: (a*X_n+c) mod n vì số ngẫu nhiên là chỉ số mảng nên bắt buộc phải 0<=output<=n. Bên trong hàm xáo trộn mảng: Chọn giá trị ban đầu của a và c bằng |A[0]|%n và |A[1]%n, X_0= a.c; sau mỗi lần duyệt đến vị trí j chọn lại: a= |A[j]|%n và c= a.c%n để đảm bảo tính ngẫu nhiên.   
+ + Giải thuật hàm xáo trộn mảng: Dùng biến i để duyệt lần lượt các giá trị của trong mảng, tại một giá trị i nhất định; dùng hàm tạo số ngẫu nhiên để tạo ra index được lưu vào temp của giá trị cần đảo với giá trị tại i. Đảo hai giá trị A[i] và A[temp].
+ + Tiếp tục duyệt cho đến hết mảng.
