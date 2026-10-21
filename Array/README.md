@@ -104,7 +104,7 @@ Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặ
  + Lần lượt đảo dấu của các phần tử trong mảng
  + Tiếp tục tìm hai số dương nhất trong mảng hiện tại, tức là hai số âm nhất trong mảng ban đầu.
  + Lần lượt nhất hai số dương nhất và hai số âm nhất với nhau. Nếu cái nào lớn hơn thì lấy
-## Chi tiết giải thuật:
+## Chi tiết giải thuật: Chọn ra hai phần tử khác nhau trong mảng sao cho khi nhân chúng với nhau, tích thu được là lớn nhất so với tất cả các cặp khác có thể tạo ra trong mảng.
  + Tạo một CTDL pair<int,int> để lưu trữ các cặp giá trị dương nhất và âm nhất trong mảng.
  + Khởi tạo hai biến để lưu trữ các giá trị trong mảng khi duyệt là max_1 và max_2 và bé nhất là min_1 và min_2.
  + Hàm tìm cặp giá trị lớn nhất find_max_in_arr() trả về một pair<int,int>; cụ thể trong hàm này: Lần lượt duyệt từng phần tử A[i] trong mảng, nếu lớn hơn max_2 thì gán vào max_2. Bước tiếp theo có thế đổi giá trị của max_1 và max_2 vì mặc định max_1 là giá trị lớn nhất.
