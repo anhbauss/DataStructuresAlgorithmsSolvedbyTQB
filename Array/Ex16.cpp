@@ -15,4 +15,42 @@ if A[0] + A[1] + … + A[n-2] sums to 0.
 /*Ý tưởng: Tính tổng giá trị của tất cả các phần tử trong mảng trước. Dùng biến duyệt, trong lúc duyệt thì tính tổng trái,
 từ đo tính được tổng phải rồi check*/
 
+#include<stdio.h>
+#include<iostream>
+#include<vector>
+#include "ALGORITHM.h"
 
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"Vui long nhap so phan tu trong mang: "<<endl;
+    cin>>n;
+    int A[n];
+    vector<int> index;
+    cout<<"Vui long nhap gia tri vao mang: "<<endl;
+    for(int i=0;i<n;i++){
+        cin>>A[i];
+    }h
+    vector
+    int sum = calculate_sum(A,n);
+    int tong_trai=0;
+    for(int i=0;i<n;i++){
+        if(i==0){
+            if(sum-A[0]==0) index.push_back(i);  
+        }
+        else if(i==n-1){
+            if(tong_trai==0) index.push_back(i);
+            break;
+        }
+        else{
+            if(tong_trai==sum-tong_trai-A[i]) index.push_back(i);
+        }
+    }
+    cout<<"( ";
+    for(int i=0;i<n;i++){
+        if(i==n-1) cout<<A[i]<<" )"<<endl;
+        else cout<<A[i]<<", ";
+    }
+    return 0;
+}
