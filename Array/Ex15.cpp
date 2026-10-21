@@ -40,7 +40,7 @@ int main(){
         cin>>A[i];
     }
     bubble_sort(A,n);
-    for(int i=1;i<n;i+=2){
+    for(int i=1;i<n-1;i+=2){
     swap(A[i],A[i+1]);
     }
         cout<<"( ";
