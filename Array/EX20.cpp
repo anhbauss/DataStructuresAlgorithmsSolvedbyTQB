@@ -19,7 +19,6 @@ i.e., [1, 2, 3, 4, 5] ——> [1, 2, 3, 4, 5][5, 4, 3, 2, 1] ——> [5, 4, 3, 2
 using namespace std;
 int find_bitonic_arr_size(int A[],int i, int n){
     int num=0;
-    int max=A[i];
     bool qua_dinh = false;
     for(int j=i;j<n;j++){
     if(j==i){
@@ -27,7 +26,6 @@ int find_bitonic_arr_size(int A[],int i, int n){
         continue;
     }
     if(A[j]>=A[j-1] && qua_dinh == false){
-        max=A[j];
         num++;
     }
     else if(A[j]>=A[j-1] && qua_dinh == true) break;
@@ -40,21 +38,21 @@ int find_bitonic_arr_size(int A[],int i, int n){
 }
 void find_bitonic_arr(vector<int>& data,int A[],int i,int n){
     data.clear();
-    int max=0;
     bool qua_dinh = false;
     for(int j=i;j<n;j++){
     if(j==i){
-        data.push_back(A[j]);
+        day(data,A[j]);
         continue;
     }
     if(A[j]>=A[j-1] && qua_dinh == false){
-        max=A[j];
-        data.push_back(A[j]);
+        day(data,A[j]);
+
     }
     else if(A[j]>=A[j-1] && qua_dinh == true) break;
     else if(A[j]<A[j-1]){
     qua_dinh=true; 
-    data.push_back(A[j]);
+    day(data,A[j]);
+
     }
     }
     return;
@@ -84,6 +82,6 @@ int main(){
     for(int a : data){
         cout<<" "<<a<<",";
     }
-    cout<<" }"<<endl;
+    cout<<" )"<<endl;
     return 0;
 }

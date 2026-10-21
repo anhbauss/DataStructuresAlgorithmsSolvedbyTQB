@@ -176,3 +176,19 @@ Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặ
      * Nếu i==0 thì gán A[i]=C[i+1]
      * Nếu i==n-1 thì gán A[i]=B[i-1]
      * Với i còn lại thì gán A[i]=B[i-1]*C[i+1]
+
+# EX20:
+## Chi tiết giải thuật tìm dãy bitonic lớn nhất trong mảng
+  + Tạo một vector<int> để lưu các phần tử trong dãy đó
+  + Tạo một biến bitonic_size để lưu giá trị kích thước mảng bitonic ứng với mỗi phần tử trong mảng,biến max_size để lưu giá trị kich thước mảng bitonic lơn nhất.
+  + Dùng biến index i để duyệt tất cả các phần tử trong mảng ban đầu.
+  + Ứng với mỗi phần tử: gọi hàm find_bitonic_arr_size(A,i,n) để tìm kích thước của mảng bitonic ứng với phần tử đó và lưu vào bitonic_sze
+  + Nếu bitonic_size> max_size thì gán max_size cho bitonic_size dùng hàm find_bitonic_arr(data,A,i,n) để lấy các phần tử của mảng bitonic đó
+## Chi tiết hàm:
++ find_bitonic_arr_size(A,i,n):
+   * Tạo một biến đếm sô phần tử num=0, tạo biến chỉ thị giá trị hiện tại nằm trước hay sau đỉnh: qua_dinh=false.
+   * Dùng biến index j để duyệt mảng bắt đầu từ i
+   * Xét các trường hợp của phần tử: Nếu phần tử đó bằng i thì tăng num lên 1 và tiếp tục duyệt phần tử tiếp theo. Nếu phần từ tại j lớn hơn phần tử trước đó nhưng chưa qua đỉnh thì tăng num lên 1 còn nếu đã qua đỉnh thì kết thúc vòng lặp. Nếu phần tử tai j nhỏ hơn phần thử đứng trước nhưng đã qua đỉnh thì cũng tăng num lên 1 nhưng nêú chưa qua đỉnh thì chứng tỏ j là vị trí đỉnh, lúc này cho qua_dinh=true.
+   * Tiếp tục duyệt đến khi nào điều kiện thảo mãn mảng bitonic.
++ find_bitonic_arr(vector<int>& data,int A[],int i,int n):
+   * Giải thuật tương tự với hàm đếm số phần tử trong mảng bitonic nhưng thay vì tăng biến num lên 1 mà đẩy phần tử A[j] vào vector<int> data và mỗi lần gọi hàm cần phải xóa hết các phần tử trong data.
