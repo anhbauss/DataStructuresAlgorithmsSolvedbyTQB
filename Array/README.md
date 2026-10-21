@@ -129,3 +129,15 @@ Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặ
  + Tại mỗi vị trí có index lẻ thì đổi giá trị phần tử tại vị trí i với phần tử ngay sau nó
  + Tăng biến i lên 2 đơn vị và duyệt cho đến hết mảng sẽ cho ra mảng cần tìm.
 
+# EX16:
+## Chi tiết giải thuật tìm index cân bằng của mảng: Tổng bên trái và tổng bên phải bằng nhau: 
+ + Tính tổng của tất các phần tử trong mảng: khởi tạo biến sum = 0, dùng biến i duyệt qua các phần tử rồi cộng vào biến sum.mảng
+ + Khởi tạo một CTDL vector<int> index để lưu các giá trị index cân bằng thỏa màn.
+ + Khởi tạo một biến khác để tính tổng các phần tử trong các lần duyệt: tong_trai =0.
+ + Dùng biến i để duyệt các phần tử trong mảng, tại mỗi vị trí:
+     * Tìm tổng ở dãy bên phải bằng cách: Lấy sum -  tong_trai - A[i].
+     * Kiểm tra nếu i bằng 0 thì tổng phải (sum-A[0]) có bằng 0 không. Nếu bằng thì đẩy vào index, nếu không bằng thì cộng A[i] vào tổng trái và tiếp tục duyệt.
+     * Kiểm tra nếu i bằng n-1 thì tong_trai có bằng 0 không. Nếu bằng thì đẩy n-1 vào index, nếu không thì kết thúc vòng lặp
+     * Nếu i không thuộc 2 trường hợp trên thì kiểm tra tổng phải có bằng tong_trai hay không, nếu bằng thì đẩy i vào index, nếu không bằng thì cộng A[i] vào tong_trai va tiếp tục duyệt.
+ + Tiếp tục như trên cho đến khi duyệt hết mảng.
+ + In các giá trị trong vector<int> index ra màn hình.
