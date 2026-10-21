@@ -13,9 +13,37 @@ i.e., [1, 2, 3, 4, 5] ——> [1, 2, 3, 4, 5][5, 4, 3, 2, 1] ——> [5, 4, 3, 2
 
 #include<stdio.h>
 #include<iostream>
+#include<vector>
+#include"ALGORITHM.h"
 
 using namespace std;
-
+int find_bitonic_arr_size(int A[],int i, int n){
+    int num=0;
+    int max=A[i];
+    bool qua_dinh = false;
+    for(int j=i;j<n;j++){
+    if(j==i){
+        num++;
+        continue;
+    }
+    if(A[j]>=A[j-1]){
+        max=A[j];
+        num++;
+    }
+    else if(A[j]<A[j-1]){
+    if(qua_dinh=true) break;
+    else{
+        qua_dinh=true;
+        num++;
+    }
+    }
+    }
+    return num;
+}
+void find_bitonic_arr(vector<int>& A){
+    A.clear();
+    
+}
 
 int main(){
     int n;
@@ -26,7 +54,14 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>A[i];
     }
-    
+    int max_size=0;
+    vector<int> data;
+    for(int i=0;i<n;i++){
+       int bitonic_size = find_bitonic_arr_size(A,i,n);
+       if(bitonic_size>max_size){
+       find_bitonic_arr(data);
+       }
+    }
 
     cout<<"( ";
     for(int i=0;i<n;i++){
