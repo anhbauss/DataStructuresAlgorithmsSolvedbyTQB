@@ -6,3 +6,21 @@ For example,
 
 Input:  { 6, 0, 8, 2, 3, 0, 4, 0, 1 } 
 Output: { 6, 8, 2, 3, 4, 1, 0, 0, 0 }*/
+
+#include<stdio.h>
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"Vui long nhap so phan tu trong mang: "<<endl;
+    cin>>n;
+    int A[n];
+    cout<<"Vui long nhap gia tri vao mang: "<<endl;
+    for(int i=0;i<n;i++){
+        cin>>A[i];
+    }
+    int count=0;
+    
+}
