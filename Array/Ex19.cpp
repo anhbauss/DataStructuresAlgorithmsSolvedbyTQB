@@ -35,9 +35,11 @@ int main(){
         C[i]=product;
     }
     for (int i=0;i<n;i++){
-        if(i==0) data[i]=
+        if(i==0) A[i]=C[i+1];
+        else if(i==n-1) A[i]=B[i-1];
+        else A[i]=B[i-1]*C[i+1];
     }
-    
+
     cout<<"( ";
     for(int i=0;i<n;i++){
         if(i==n-1) cout<<A[i]<<" )"<<endl;
