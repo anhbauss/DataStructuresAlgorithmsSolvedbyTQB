@@ -28,7 +28,21 @@ int main(){
         A[i]=-A[i];
     }
     min = find_max_in_arr(A,n);
-    if(max.firstfirst)
+    if(max.first*max.second<min.first*min.second){
+        max.first = min.first;
+        max.second = min.second;
+        min.first = 0;
+        min.second =0;
+    }
+    else if(max.first*max.second>min.first*min.second){
+        min.first = 0;
+        min.second =0;
+    }
+    cout<<"The maximum product is the "<<"("<<max.first<<", "<<max.second<<") ";
+    if(min.first != 0 && min.second !=0) 
+    cout<<" or"<<"("<<-min.first<<", "<<-min.second<<") ";
+    cout<<"pair."<<endl;
+    return 0;
 }
 
 pair<int,int> find_max_in_arr(int A[],int n){
