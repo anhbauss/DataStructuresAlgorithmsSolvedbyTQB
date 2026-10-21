@@ -32,7 +32,7 @@ int find_bitonic_arr_size(int A[],int i, int n){
     }
     else if(A[j]>=A[j-1] && qua_dinh == true) break;
     else if(A[j]<A[j-1]){
-    qua_dinh==true; 
+    qua_dinh=true; 
     num++;
     }
     }
@@ -53,7 +53,7 @@ void find_bitonic_arr(vector<int>& data,int A[],int i,int n){
     }
     else if(A[j]>=A[j-1] && qua_dinh == true) break;
     else if(A[j]<A[j-1]){
-    qua_dinh==true; 
+    qua_dinh=true; 
     data.push_back(A[j]);
     }
     }
