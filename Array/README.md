@@ -141,3 +141,17 @@ Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặ
      * Nếu i không thuộc 2 trường hợp trên thì kiểm tra tổng phải có bằng tong_trai hay không, nếu bằng thì đẩy i vào index, nếu không bằng thì cộng A[i] vào tong_trai va tiếp tục duyệt.
  + Tiếp tục như trên cho đến khi duyệt hết mảng.
  + In các giá trị trong vector<int> index ra màn hình.
+
+# EX17:
+## Ý tưởng: 
++ Dùng giải thuật bubble sort hoặc sort khác để sắp xếp mảng theo giá trị tăng dần. Mục đích để gom các phần từ giống nhau lại với nhau. Duyệt để tìm phần tử xuất hiện nhiều nhất.
+## Chi tiết giải thuật tìm phần tử chiếm đa số trong mảng:
+ + Dùng giải thuật bubble sort hoặc sort khác để sắp xếp mảng theo thứ tự tăng dần.
+ + Tạo biến count_max để lưu số lần xuất hiện của phần tử nhiều nhất cho đến hiện tại, count để đếm số lần xuất hiện của chính phần tử đang duyệt, temp để lưu tạm giá trị của phần tử đang duyệt, majority để lưu phần tử có số lần xuất hiện nhiều nhất cho đến hiện tại
+ + Gán count_max=0, temp=majority=A[0], count=1.
+ + Dùng biến i làm index để duyệt các phần tử trong mảng:
+   * Với mỗi giá trị trong mảng: Nếu i=0 đơn giản tăng count lên 1 đơn vị và duyệt tiếp phần tử tiếp theo. 
+   * Nếu phần tử hiện tại bằng temp (hay phần tử trước đó) thì tăng count lên 1 và tiếp tục duyệt. 
+   * Nếu phần tử hiện tại khác temp thì kiểm tra xem count có lớn hơn count_max, nếu đúng thì gán count cho count_max và temp cho majority, nếu sai thì reset lại biến count=1, temp = A[i] và tiếp tục duyệt.
+ + Sau khi kết thúc vòng lặp, chỉ còn các phần tử nằm cuối mảng là chưa được kiểm tra. Kiểm tra count lúc này có lớn hơn count_max không. Nếu có thì gán count cho count_max và majority=A[n-1]. Nếu không thì giữ nguyên giá trị.
+ + Kiểm tra count_max có lớn hơn N/2 không? Nếu có thì in ra.
