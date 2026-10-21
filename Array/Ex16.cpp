@@ -21,18 +21,22 @@ từ đo tính được tổng phải rồi check*/
 #include "ALGORITHM.h"
 
 using namespace std;
+int calculate_sum(int A[],int n){
+    int sum=0;
+    for(int i=0;i<n;i++) sum+=A[i];
+    return sum;
+}
 
 int main(){
     int n;
     cout<<"Vui long nhap so phan tu trong mang: "<<endl;
     cin>>n;
     int A[n];
-    vector<int> index;
     cout<<"Vui long nhap gia tri vao mang: "<<endl;
     for(int i=0;i<n;i++){
         cin>>A[i];
-    }h
-    vector
+    }
+    vector<int> index;
     int sum = calculate_sum(A,n);
     int tong_trai=0;
     for(int i=0;i<n;i++){
@@ -46,11 +50,13 @@ int main(){
         else{
             if(tong_trai==sum-tong_trai-A[i]) index.push_back(i);
         }
+        tong_trai+=A[i];
     }
-    cout<<"( ";
-    for(int i=0;i<n;i++){
-        if(i==n-1) cout<<A[i]<<" )"<<endl;
-        else cout<<A[i]<<", ";
+    if(soluong(index)>0){
+        for(int a : index){
+            cout<<"Equilibrium Index found at "<<a<<endl;
+        }
     }
+    else cout<<"Equilibrium Index not found "<<endl;
     return 0;
 }
