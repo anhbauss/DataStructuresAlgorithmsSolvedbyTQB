@@ -20,14 +20,14 @@ int create_random_number(int a, int c, int n, int X_n){
 
 void shuffle(int A[],int n){
     int temp,a=0,c=0;
-    int i;
-    for(i=0;i<n;i++){
-        if(A[i]<n) {
-            a=A[i];
-            
-        }            
+    int a=(A[0]>0)?A[0]:(-A[0]);
+    a = A[0]%n;
+    c = (A[1]>0)?A[1]:(-A[1]);
+    c = A[1]%n;
+    temp=create_random_number(a,c,n,a*c);
+    for(int i=0;i<n;i++){
+    swap(A[i],A[temp]);
+    temp=create_random_number(a,c,n,temp);
     }
-
-    for(int )
 }
 //X_{n+1} = (a*X_n + c) mod m
