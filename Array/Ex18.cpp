@@ -11,6 +11,12 @@ Output: { 6, 8, 2, 3, 4, 1, 0, 0, 0 }*/
 #include<iostream>
 
 using namespace std;
+void swap(int& a, int& b){
+    int temp = a;
+    a =b;
+    b = temp;
+    return;
+}
 
 int main(){
     int n;
@@ -21,6 +27,22 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>A[i];
     }
+    int count_0=0;
+    for(int i=0;i<n;i++){
+        if(A[i]==0) count_0++; 
+    }
     int count=0;
-    
+    for(int i=0;i<n;i++){
+    if(A[i]==0){
+        count++;
+        continue;
+    }
+    swap(A[i],A[i-count]);
+    }
+    cout<<"( ";
+    for(int i=0;i<n;i++){
+        if(i==n-1) cout<<A[i]<<" )"<<endl;
+        else cout<<A[i]<<", ";
+    }
+    return 0;
 }
