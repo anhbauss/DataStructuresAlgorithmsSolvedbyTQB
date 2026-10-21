@@ -31,6 +31,26 @@ int main(){
         cin>>A[i];
     }
     bubble_sort(A,n);
-    int majority=0, temp = 0;
-    
+    int majority, temp,count_max=0,count=1;
+    temp=A[0];
+    for(int i=0;i<n;i++){
+    if(A[i]!=A[i-1] && i>0){
+        if(count>count_max){
+            count_max = count;
+            majority= temp;
+        }
+        else{
+            count=1;
+            temp=A[i];
+        }
+    }
+    else{
+        count++;
+    }
+    }
+    if(count_max>(int)n/2){
+        cout<<"The majority element is " << majority;
+    }
+    else cout<<"The majority element doesn't exist"<<endl;
+    return 0;
 }
