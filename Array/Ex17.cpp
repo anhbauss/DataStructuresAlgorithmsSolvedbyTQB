@@ -31,13 +31,15 @@ int main(){
         cin>>A[i];
     }
     bubble_sort(A,n);
-    int majority, temp,count_max=0,count=1;
+    int majority=A[0], temp,count_max=0,count=1;
     temp=A[0];
     for(int i=0;i<n;i++){
     if(A[i]!=A[i-1] && i>0){
         if(count>count_max){
             count_max = count;
             majority= temp;
+            count=1;
+            temp=A[i];
         }
         else{
             count=1;
@@ -47,6 +49,10 @@ int main(){
     else{
         count++;
     }
+    }
+    if(count>count_max){
+        count_max = count;
+        majority = A[n-1];
     }
     if(count_max>(int)n/2){
         cout<<"The majority element is " << majority;
