@@ -164,3 +164,15 @@ Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặ
    * Nếu A[i]==0 thì tăng biến count lên 1 và tiếp tục duyệt đến phần tử tiếp theo
    * Nếu A[i] != 0 thì đảo giá trị A[i] với A[i-count], A[i-count] là phần tử 0 đầu tiên từ trái sang lúc này. Tiếp tục duyệt đến phần tử tiếp theo trong mảng
    * Duyệt lần lượt tất cả các phần tử thì ta sẽ được mảng cần tìm.
+
+# EX19:
+## Chi tiết giải thuật tìm mảng tích các phần tử trong mảng ngoại từ vị trí tại mỗi index.
+  + Input:  { 1, 2, 3, 4, 5 } ---> Output: { 120, 60, 40, 30, 24 }
+  + Tạo một mảng để lưu tích của các mảng con với kích thước tăng dần từ 0 đến n-1. Một mảng để lưu tích các mảng con được mở rộng từ phía bên trái là B[n] và một mảng để lưu tích các mảng con được mở rộng từ phía bên phải là C[n].
+  + Tạo mảng B[n] bằng cách dùng một biến product=1 và biến để duyệt index i. Tại mỗi vị trí i, nhân product với A[i] (product*A[i]) để tính tích mảng con mới và gán B[i]=product. Giá trị i chạy từ 0 dến n-1.
+  + Tạo mảng C[n] bằng cách dùng một biến product=1 và biến để duyệt index i. Tại mỗi vị trí i, nhân product với A[i] (product*A[i]) để tính tích mảng con mới và gán B[i]=product. Giá trị i chạy từ n-1 đến 0.
+  + Lúc này, với mỗi vị trí i trong A[i], thì B[i-1] sẽ là tích của tất cả các phần tử nằm bên trái phần tử A[i] và C[i+1] là tích của tất cả các phần tử nằm bên phải phần tử A[i].
+  + Dùng biến index i tịnh tiến để tạo mảng A[i] mới bằng cách duyệt:
+     * Nếu i==0 thì gán A[i]=C[i+1]
+     * Nếu i==n-1 thì gán A[i]=B[i-1]
+     * Với i còn lại thì gán A[i]=B[i-1]*C[i+1]
