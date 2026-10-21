@@ -55,8 +55,8 @@ pair<int,int> find_max_in_arr(int A[],int n){
             max_2=A[i];
             if(max_2>max_1){
                 int temp = max_2;
-                max_1 = temp;
                 max_2 = max_1;
+                max_1 = temp;
             }
         }
         continue;
