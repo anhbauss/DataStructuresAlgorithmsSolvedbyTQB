@@ -41,14 +41,14 @@ int main(){
     int tong_trai=0;
     for(int i=0;i<n;i++){
         if(i==0){
-            if(sum-A[0]==0) index.push_back(i);  
+            if(sum-A[0]==0) day(index,i);  
         }
         else if(i==n-1){
-            if(tong_trai==0) index.push_back(i);
+            if(tong_trai==0) day(index,i);
             break;
         }
         else{
-            if(tong_trai==sum-tong_trai-A[i]) index.push_back(i);
+            if(tong_trai==sum-tong_trai-A[i]) day(index,i);
         }
         tong_trai+=A[i];
     }
