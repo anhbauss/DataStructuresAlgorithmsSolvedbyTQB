@@ -30,18 +30,17 @@ int find_bitonic_arr_size(int A[],int i, int n){
         max=A[j];
         num++;
     }
+    else if(A[j]>=A[j-1] && qua_dinh == true) break;
     else if(A[j]<A[j-1]){
-    if(qua_dinh==true) break;
-    else{
-        qua_dinh=true;
-        num++;
-    }
+    qua_dinh==true; 
+    num++;
     }
     }
     return num;
 }
 void find_bitonic_arr(vector<int>& data,int A[],int i,int n){
     data.clear();
+    int max=0;
     bool qua_dinh = false;
     for(int j=i;j<n;j++){
     if(j==i){
@@ -49,14 +48,13 @@ void find_bitonic_arr(vector<int>& data,int A[],int i,int n){
         continue;
     }
     if(A[j]>=A[j-1] && qua_dinh == false){
+        max=A[j];
         data.push_back(A[j]);
     }
+    else if(A[j]>=A[j-1] && qua_dinh == true) break;
     else if(A[j]<A[j-1]){
-    if(qua_dinh==true) break;
-    else{
-        qua_dinh=true;
-        data.push_back(A[j]);
-    }
+    qua_dinh==true; 
+    data.push_back(A[j]);
     }
     }
     return;
@@ -77,14 +75,15 @@ int main(){
     for(int i=0;i<n;i++){
        int bitonic_size = find_bitonic_arr_size(A,i,n);
        if(bitonic_size>max_size){
+        max_size = bitonic_size;
        find_bitonic_arr(data,A,i,n);
        }
     }
 
     cout<<"( ";
-    for(int i=0;i<n;i++){
-        if(i==n-1) cout<<A[i]<<" )"<<endl;
-        else cout<<A[i]<<", ";
+    for(int a : data){
+        cout<<" "<<a<<",";
     }
+    cout<<" }"<<endl;
     return 0;
 }
