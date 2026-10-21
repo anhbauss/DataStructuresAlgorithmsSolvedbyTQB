@@ -8,3 +8,30 @@ For example,
 Longest bitonic subarray of the sequence { 3, 5, 8, 4, 5, 9, 10, 8, 5, 3, 4 } is { 4, 5, 9, 10, 8, 5, 3 } 
 For sequences sorted in increasing or decreasing order, the output is the same as the input sequence, 
 i.e., [1, 2, 3, 4, 5] ——> [1, 2, 3, 4, 5][5, 4, 3, 2, 1] ——> [5, 4, 3, 2, 1]*/
+
+/*Ý tưởng: Duyệt với mỗi phần tử, tạo hàm tìm mảng bitonic với mỗi phần tử và hàm tìm kích thước mảng bitonic đó*/
+
+#include<stdio.h>
+#include<iostream>
+
+using namespace std;
+
+
+int main(){
+    int n;
+    cout<<"Vui long nhap so phan tu trong mang: "<<endl;
+    cin>>n;
+    int A[n];
+    cout<<"Vui long nhap gia tri vao mang: "<<endl;
+    for(int i=0;i<n;i++){
+        cin>>A[i];
+    }
+    
+
+    cout<<"( ";
+    for(int i=0;i<n;i++){
+        if(i==n-1) cout<<A[i]<<" )"<<endl;
+        else cout<<A[i]<<", ";
+    }
+    return 0;
+}
