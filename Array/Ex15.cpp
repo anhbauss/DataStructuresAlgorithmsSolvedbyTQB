@@ -12,8 +12,24 @@ Assume no duplicate elements are present in the array.*/
 
 using namespace std;
 
-void bubble_sort(int A[],int n);
-void swap(int& a, int& b);
+void bubble_sort(int A[],int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i-1;j++){
+            if(A[j]>A[j+1]){
+                int temp = A[j];
+                A[j]= A[j+1];
+                A[j+1] = temp;
+            }
+        }
+    }
+    return;
+}
+void swap(int& a, int& b){
+    int temp = a;
+    a= b;
+    b = temp;
+    return;
+}
 int main(){
     int n;
     cout<<"Vui long nhap so phan tu trong mang: "<<endl;
