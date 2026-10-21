@@ -98,3 +98,19 @@ Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặ
  + Sau khi đếm được số phần tử trong mảng con đó và tìm được vị trí số 0 thì kiểm tra: Nếu count_0==0 thì chứng tỏ mảng lúc này đang không có số không, nghĩa là index nằm ở vị trí liền trước của mảng là p1-- và liền sau của mảng là p2++; lúc này dùng một CTDL pair<int,int> để lưu hai index này và tạm gán temp_index=-1
  + Khi đã kiểm tra, bây giờ đến lúc kiểm tra count_num có lớn hơn max_size hay không. Nếu lớn hơn xóa hết vector cũ và kiểm tra xem temp_index có bằng trừ -1 không, trong trường hợp nếu bằng thì phải đẩy hai phần từ trong pair vào vector và kèm thêm điều kiện là hai phần tử ấy chưa xuất hiện trong vector (dung hàm "tim" trong ALGORITHM.h), trong trường hợp không bằng thì đẩy temp_index vào vector và kèm thêm điểu kiện là temp_index chưa xuất hiện trong vector(tiep tuc dung ham "tim"). Nếu nhỏ hơn thì giữ nguyên vector và max_count. Nếu bằng thì làm như trường hợp lớn hơn nhưng không xóa vector cũ.
 
+# EX13:
+## Ý tưởng: 
+ + Viết một hàm tìm hai số dương nhất (hai số lớn nhất trong mảng).
+ + Lần lượt đảo dấu của các phần tử trong mảng
+ + Tiếp tục tìm hai số dương nhất trong mảng hiện tại, tức là hai số âm nhất trong mảng ban đầu.
+ + Lần lượt nhất hai số dương nhất và hai số âm nhất với nhau. Nếu cái nào lớn hơn thì lấy
+## Chi tiết giải thuật:
+ + Tạo một CTDL pair<int,int> để lưu trữ các cặp giá trị dương nhất và âm nhất trong mảng.
+ + Khởi tạo hai biến để lưu trữ các giá trị trong mảng khi duyệt là max_1 và max_2 và bé nhất là min_1 và min_2.
+ + Hàm tìm cặp giá trị lớn nhất find_max_in_arr() trả về một pair<int,int>; cụ thể trong hàm này: Lần lượt duyệt từng phần tử A[i] trong mảng, nếu lớn hơn max_2 thì gán vào max_2. Bước tiếp theo có thế đổi giá trị của max_1 và max_2 vì mặc định max_1 là giá trị lớn nhất.
+ + Gọi hàm find_max_in_arr() để tìm pair<int,int> max
+ + Lần lượt duyệt từng phần tử trong mảng và đảo dấu chúng.
+ + Gọi hàm find_max_in_arr() để tìm pair<int,int> min
+ + Kiểm tra xem tích của hai phần từ trong pair nào lớn nhất thì in ra.
+ + Kết thúc giải thuật
+
