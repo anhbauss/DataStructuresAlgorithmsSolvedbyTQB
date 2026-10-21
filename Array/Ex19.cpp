@@ -30,7 +30,7 @@ int main(){
         B[i]=product;
     }
     product=1;
-    for(int i=n-1;i>=0;i++){
+    for(int i=n-1;i>=0;i--){
         product*=A[i];
         C[i]=product;
     }
