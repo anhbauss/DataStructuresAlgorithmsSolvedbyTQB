@@ -155,3 +155,12 @@ Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặ
    * Nếu phần tử hiện tại khác temp thì kiểm tra xem count có lớn hơn count_max, nếu đúng thì gán count cho count_max và temp cho majority, nếu sai thì reset lại biến count=1, temp = A[i] và tiếp tục duyệt.
  + Sau khi kết thúc vòng lặp, chỉ còn các phần tử nằm cuối mảng là chưa được kiểm tra. Kiểm tra count lúc này có lớn hơn count_max không. Nếu có thì gán count cho count_max và majority=A[n-1]. Nếu không thì giữ nguyên giá trị.
  + Kiểm tra count_max có lớn hơn N/2 không? Nếu có thì in ra.
+
+# EX18:
+## Chi tiết giải thuật dồn các phần tử 0 về cuối mảng
+ + Dùng biến count để đếm số phần tử 0 không mảng
+ + Khởi tạo count=0
+ + Dùng biến index i để duyệt các phần tử trong mảng:
+   * Nếu A[i]==0 thì tăng biến count lên 1 và tiếp tục duyệt đến phần tử tiếp theo
+   * Nếu A[i] != 0 thì đảo giá trị A[i] với A[i-count], A[i-count] là phần tử 0 đầu tiên từ trái sang lúc này. Tiếp tục duyệt đến phần tử tiếp theo trong mảng
+   * Duyệt lần lượt tất cả các phần tử thì ta sẽ được mảng cần tìm.

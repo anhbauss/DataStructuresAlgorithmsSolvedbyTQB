@@ -27,10 +27,6 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>A[i];
     }
-    int count_0=0;
-    for(int i=0;i<n;i++){
-        if(A[i]==0) count_0++; 
-    }
     int count=0;
     for(int i=0;i<n;i++){
     if(A[i]==0){
