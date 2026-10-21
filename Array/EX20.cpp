@@ -26,12 +26,12 @@ int find_bitonic_arr_size(int A[],int i, int n){
         num++;
         continue;
     }
-    if(A[j]>=A[j-1]){
+    if(A[j]>=A[j-1] && qua_dinh == false){
         max=A[j];
         num++;
     }
     else if(A[j]<A[j-1]){
-    if(qua_dinh=true) break;
+    if(qua_dinh==true) break;
     else{
         qua_dinh=true;
         num++;
@@ -40,10 +40,28 @@ int find_bitonic_arr_size(int A[],int i, int n){
     }
     return num;
 }
-void find_bitonic_arr(vector<int>& A){
-    A.clear();
-    
+void find_bitonic_arr(vector<int>& data,int A[],int i,int n){
+    data.clear();
+    bool qua_dinh = false;
+    for(int j=i;j<n;j++){
+    if(j==i){
+        data.push_back(A[j]);
+        continue;
+    }
+    if(A[j]>=A[j-1] && qua_dinh == false){
+        data.push_back(A[j]);
+    }
+    else if(A[j]<A[j-1]){
+    if(qua_dinh==true) break;
+    else{
+        qua_dinh=true;
+        data.push_back(A[j]);
+    }
+    }
+    }
+    return;
 }
+
 
 int main(){
     int n;
@@ -59,7 +77,7 @@ int main(){
     for(int i=0;i<n;i++){
        int bitonic_size = find_bitonic_arr_size(A,i,n);
        if(bitonic_size>max_size){
-       find_bitonic_arr(data);
+       find_bitonic_arr(data,A,i,n);
        }
     }
 
