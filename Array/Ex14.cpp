@@ -24,8 +24,8 @@ void swap(int& a,int& b){
     return;
 }
 void shuffle(int A[],int n){
-    int temp,a=0,c=0;
-    int a=(A[0]>0)?A[0]:(-A[0]);
+    int temp,a,c;
+    a=(A[0]>0)?A[0]:(-A[0]);
     a = A[0]%n;
     c = (A[1]>0)?A[1]:(-A[1]);
     c = A[1]%n;
@@ -38,4 +38,19 @@ void shuffle(int A[],int n){
 }
 //X_{n+1} = (a*X_n + c) mod m
 
-
+int main(){
+    int n;
+    cout<<"Vui long nhap so phan tu trong mang: "<<endl;
+    cin>>n;
+    int A[n];
+    cout<<"Vui long nhap gia tri vao mang: "<<endl;
+    for(int i=0;i<n;i++){
+        cin>>A[i];
+    }
+    shuffle(A,n);
+    cout<<"( ";
+    for(int i=0;i<n;i++){
+        if(i==n-1) cout<<A[i]<<" )"<<endl;
+        else cout<<A[i]<<", ";
+    }
+}
