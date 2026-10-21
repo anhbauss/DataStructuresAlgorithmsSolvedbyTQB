@@ -17,7 +17,12 @@ using namespace std;
 int create_random_number(int a, int c, int n, int X_n){
   return (a*X_n+c)%n;
 }
-
+void swap(int& a,int& b){
+    int temp= a;
+    a =b;
+    b= temp;
+    return;
+}
 void shuffle(int A[],int n){
     int temp,a=0,c=0;
     int a=(A[0]>0)?A[0]:(-A[0]);
@@ -29,5 +34,8 @@ void shuffle(int A[],int n){
     swap(A[i],A[temp]);
     temp=create_random_number(a,c,n,temp);
     }
+    return;
 }
 //X_{n+1} = (a*X_n + c) mod m
+
+
