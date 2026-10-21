@@ -121,3 +121,11 @@ Tìm những mảng con sao cho mảng đấy chỉ bao gồm toàn số 1 hoặ
  + Giải thuật hàm tạo số ngẫu nhiên: Input: a,c, X_n, n( số phần tử trong mảng). Output: (a*X_n+c) mod n vì số ngẫu nhiên là chỉ số mảng nên bắt buộc phải 0<=output<=n. Bên trong hàm xáo trộn mảng: Chọn giá trị ban đầu của a và c bằng |A[0]|%n và |A[1]%n, X_0= a.c; sau mỗi lần duyệt đến vị trí j chọn lại: a= |A[j]|%n và c= a.c%n để đảm bảo tính ngẫu nhiên.   
  + Giải thuật hàm xáo trộn mảng: Dùng biến i để duyệt lần lượt các giá trị của trong mảng, tại một giá trị i nhất định; dùng hàm tạo số ngẫu nhiên để tạo ra index được lưu vào temp của giá trị cần đảo với giá trị tại i. Đảo hai giá trị A[i] và A[temp].
  + Tiếp tục duyệt cho đến hết mảng.
+
+# EX15:
+## Chi tiết giải thuật tạo mảng hình sóng: Giả trị ở giữa lớn hơn giá trị liền trước và liền sau:
+ + Dùng giải thuật buble sort hoặc giải thuật sort nào khác để sắp xếp mảng theo thứ tự tăng dần.
+ + Dùng biến i làm index để duyệt mảng, i bắt đầu với phần tử thứ hai (i=1)
+ + Tại mỗi vị trí có index lẻ thì đổi giá trị phần tử tại vị trí i với phần tử ngay sau nó
+ + Tăng biến i lên 2 đơn vị và duyệt cho đến hết mảng sẽ cho ra mảng cần tìm.
+
