@@ -1,3 +1,17 @@
+# EX1:
+ ## Chi tiết giải thuật tìm cặp số trong mảng có tổng bằng số target nhập vào:
+  + Dùng giải thuật bubble sort hoặc loại sort khác để sắp xếp mảng theo thứ tự tăng dần.
+  + Chỉ khác trong hàm sort này sử dụng CTDL deque<int> để lưu các phần tử trong mảng tăng dần.
+  + Cách tìm cặp số dựa trên CTDL deque<int>:
+     * Duyệt hàng đợi hai đầu từ cả đầu và cuối
+     * Ứng với mỗi giá trị cuối hàng đợi (giá trị lớn nhất hiện tại): thử cộng giá trị này với giá trị đầu tiên (ứng với giá trị nhỏ nhất lúc này). 
+        - Nếu tổng này lớn hơn thì chứng tỏ phần tử cuối cùng này không thể ghép pair để tạo thành tổng bằng target được --> popback() để xóa phần tử này.
+        - Nếu tổng này bằng target thì in ra cặp đầu và cuối, dồng thời dùng pop_back và pop_front
+        - Nếu tổng này nhỏ hơn target thì chứng tỏ phần tử đầu không thể ghép cặp với phần tử nào khác --> pop_front() để xóa phần tử đầu tiên.
+
+     * Tiếp tục duyệt cho đến khi hàng đợi rỗng hoặc chỉ còn 1 phần tử
+
+
 # Ex4:
  ## Chi tiết giải thuật sort Ex4:
  + Khai báo hai con trỏ, con trỏ p1 trỏ vào phần tử đầu tiên, con trỏ p2 trỏ vào phần tử cuối cùng
