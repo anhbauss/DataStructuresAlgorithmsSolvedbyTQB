@@ -27,6 +27,7 @@ bool check_has_sub_array(vector<int> sumprefix, int num[],int n){
     }
     
     for(int i=0;i< n;i++){
+        if(sumprefix[i]==0) return true;
         for(int j=i+1;j<n;j++){
             if(sumprefix[j]==sumprefix[i]) return true;
             else continue;

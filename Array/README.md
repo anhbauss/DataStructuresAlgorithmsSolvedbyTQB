@@ -22,7 +22,17 @@
     * Output: vector<int> sumprefix
     * Dùng biến index i để duyệt qua các phần tử trong mảng num, biến sum=0 để tính các sumprefix. Ứng với mỗi giá trị i thì cộng num[i] vào sum rồi đẩy vào trong sumprefix
   + Hàm check_has_sub_array:
-    * Input: 
+    * Input:Mảng ban đầu num[], số phần tử n,vector<int> sumprefix
+    * Output: true(có mảng con bằng 0)/false(không có mảng con bằng 0)
+    * Dùng biến index i để duyệt các phần tử trong mảng num ban đầu, nếu có thì 
+    sẽ trả về true
+    * Dùng biến index i để duyệt các phần tử trong vector<int> sumprefix. Ứng với mỗi phần tử tại i:
+     - Nếu phần tử đó bằng 0 thì trả về true
+     - Nếu phần tử đó khác 0 thì dùng một biến index khác j=i+1 duyệt các phần tử còn lại xem có phần tử nào bằng giá trị trị i không. Nếu có thì trả về true
+    * Tiếp tục duyệt cho hết mảng
+
+# EX3:
+   
 # Ex4:
  ## Chi tiết giải thuật sort Ex4:
  + Khai báo hai con trỏ, con trỏ p1 trỏ vào phần tử đầu tiên, con trỏ p2 trỏ vào phần tử cuối cùng
