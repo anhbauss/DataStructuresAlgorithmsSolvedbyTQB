@@ -22,18 +22,15 @@ vector<int> sum_prefix(int num[],int n){
     return sumprefix;    
 }
 bool check_has_sub_array(vector<int> sumprefix, int num[],int n){
-    set<int> s;
-    s.insert(0);
     for (int i = 0; i<n; i++){
     if(num[i]==0) return true;
     }
     
-    for(int sum : sumprefix){
-        if (sum==0) return true;
-        if (s.find(sum)!=s.end()){
-            return true;
+    for(int i=0;i< n;i++){
+        for(int j=i+1;j<n;j++){
+            if(sumprefix[j]==sumprefix[i]) return true;
+            else continue;
         }
-        else s.insert(sum);
     }
     return false;
 }

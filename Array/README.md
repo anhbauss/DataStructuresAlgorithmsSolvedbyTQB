@@ -11,7 +11,18 @@
 
      * Tiếp tục duyệt cho đến khi hàng đợi rỗng hoặc chỉ còn 1 phần tử
 
-
+# EX2: 
+ ## Ý tưởng: 
+  + Chia mảng thành những mảng con bắt đầu từ các phần tử đầu tiên của mảng ban đầu, với kích thước tăng dần từ 1 đến n.
+  + Lần lượt tính tổng của các mảng con, gọi là sum_prefix rồi lưu vào một mảng bất kỳ.
+  + Duyệt mảng của các sum_prefix, nếu có hai phần tử nào bằng nhau: giả sử vị trí a và vị trí b thì chứng tỏ tổng của các phần tử từ a+1 đến b trong mảng ban đầu có giá trị bằng 0.
+ ## Chi tiết giải thuật kiểm tra mảng có tồn tại mảng con có tổng bằng 0 hay không:
+  + Hàm sum_prefix:
+    * Input: Mảng ban đầu num[], số phần tử n
+    * Output: vector<int> sumprefix
+    * Dùng biến index i để duyệt qua các phần tử trong mảng num, biến sum=0 để tính các sumprefix. Ứng với mỗi giá trị i thì cộng num[i] vào sum rồi đẩy vào trong sumprefix
+  + Hàm check_has_sub_array:
+    * Input: 
 # Ex4:
  ## Chi tiết giải thuật sort Ex4:
  + Khai báo hai con trỏ, con trỏ p1 trỏ vào phần tử đầu tiên, con trỏ p2 trỏ vào phần tử cuối cùng
