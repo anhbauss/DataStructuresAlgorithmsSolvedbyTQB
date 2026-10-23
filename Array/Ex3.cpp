@@ -53,7 +53,7 @@ unordered_map<int,int> sum_equal_zero(cout_data data){
         if(pos!=sum_vector.end()){
             key_value.first = i;
             key_value.second = my_distance_b(sum_vector.begin(),pos);
-            has_equal_value.insert(key_value);
+            day(has_equal_value,key_value);
         }
         i++;
     }

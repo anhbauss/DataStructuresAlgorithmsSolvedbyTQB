@@ -32,7 +32,15 @@
     * Tiếp tục duyệt cho hết mảng
 
 # EX3:
-   
+ ## Ý tưởng: 
+ + Giống như bài 2 chỉ khác cách lưu trữ để đưa ouput
+ ## Chi tiết giải thuật tìm các mảng con có tổng bằng 0 rồi print:
+ + Tạo một struct cout_data để in ra màn hình, bao gồm: vector<int> sum_prefix; bool did_it_printed để kiểm soát xem đã in dữ liệu ra màn hình chưa, nếu đã in thì không phải in lại dòng "The subarrays with a sum of 0 are:"
+ + Hàm sumprefix: Giống như hàm sumprefix trong bài 2 chỉ khác trong hàm này kiêm động tác tìm các phần tử bằng 0 trong sumprefix và in ra
+ + Dùng CTDL unordered_map<int,int> để lưu trữ các cặp index đầu và cuối của mảng con có tổng bằng 0
+ + Hàm sum_equal_zero:tìm các mảng con có tổng bằng 0 và lưu vị trí đầu và cuối của index đó vào CTDL unordered_map để trả vể. Chi tiết giải thuật của hàm: dùng vòng lặp foreach để duyệt các phần tử trong mảng tổng sum_prefix; ứng với mỗi phần tử thì dùng hàm tim() đề tìm phần tử  nằm sau mảng bằng giá trị tại đó. Hàm tim() có iterator first là phần tử hiện tại +1, nếu không có thì sẽ trả về interator của phần tử cuối cùng. Nếu tồn tại phần tử bằng thì dùng hàm my_distance_b để tính khoảng cách giữa hai phần tử, mục đích để biết vị trí phần tử thứ 2. Ghép hai phần tử này thành pair và đẩy vào unordered_map
+ + Hàm find_subarrays: Dựa trên các cặp index trong unordered_map và cout_data để kiểm tra xem đã in ra hay chưa. Mục đích để in ra màn hình.
+ 
 # Ex4:
  ## Chi tiết giải thuật sort Ex4:
  + Khai báo hai con trỏ, con trỏ p1 trỏ vào phần tử đầu tiên, con trỏ p2 trỏ vào phần tử cuối cùng
